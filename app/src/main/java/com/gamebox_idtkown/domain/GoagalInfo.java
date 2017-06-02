@@ -96,6 +96,8 @@ public class GoagalInfo {
         ApplicationInfo appinfo = context.getApplicationInfo();
         String sourceDir = appinfo.sourceDir;
         ZipFile zf = null;
+
+        String name = "rsa_public_key.pem";
         try {
             zf = new ZipFile(sourceDir);
             ZipEntry ze1 = zf.getEntry("META-INF/gamechannel.json");
@@ -103,10 +105,7 @@ public class GoagalInfo {
             result1 = FileUtil.readString(in1);
             LogUtil.msg("渠道->" + result1);
 
-            ZipEntry ze2 = zf.getEntry("META-INF/rsa_public_key.pem");
-            InputStream in2 = zf.getInputStream(ze2);
-            result2 = FileUtil.readString(in2);
-            LogUtil.msg("公钥->" + result2);
+            result2 = FileUtil.readInfoInSDCard(context, dir, name);
         } catch (Exception e) {
             LogUtil.msg("apk中gamechannel或rsa_public_key文件不存在", LogUtil.W);
         }
@@ -140,7 +139,7 @@ public class GoagalInfo {
             }
         }
 
-        String name =  "gamechannel.json";
+        name = "gamechannel.json";
         if (result1 != null) {
             FileUtil.writeInfoInSDCard(context, result1, dir, name);
         } else {
@@ -156,7 +155,15 @@ public class GoagalInfo {
             GoagalInfo.publicKey = getPublicKey(result2);
             FileUtil.writeInfoInSDCard(context, result2, dir, name);
         } else {
-            result2 = FileUtil.readInfoInSDCard(context, dir, name);
+            ZipEntry ze2 = zf.getEntry("META-INF/rsa_public_key.pem");
+            InputStream in2 = null;
+            try {
+                in2 = zf.getInputStream(ze2);
+                result2 = FileUtil.readString(in2);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            LogUtil.msg("公钥->" + result2);
             if (result2 != null) {
                 GoagalInfo.publicKey = getPublicKey(result2);
             }
