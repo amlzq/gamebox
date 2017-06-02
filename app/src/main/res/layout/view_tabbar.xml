@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:gb="http://schemas.android.com/apk/res-auto"
+    >
+
+    <View
+        android:id="@+id/tab_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray2"></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tab_line"
+        android:background="@color/bg2">
+
+        <com.gamebox_idtkown.views.widgets.GBTabBarItem
+            android:id="@+id/item_index"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            gb:src="@mipmap/tab_index"
+            gb:text="@string/tab_item_index_title"
+            ></com.gamebox_idtkown.views.widgets.GBTabBarItem>
+
+        <com.gamebox_idtkown.views.widgets.GBTabBarItem
+            android:id="@+id/item_chosen"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            gb:src="@mipmap/tab_chosen"
+            gb:text="@string/tab_item_chosen_title"></com.gamebox_idtkown.views.widgets.GBTabBarItem>
+
+        <com.gamebox_idtkown.views.widgets.GBTabBarItem
+            android:id="@+id/item_gifts"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            gb:src="@mipmap/tab_gifts"
+            gb:text="@string/tab_item_gifts_title"></com.gamebox_idtkown.views.widgets.GBTabBarItem>
+
+        <com.gamebox_idtkown.views.widgets.GBTabBarItem
+            android:id="@+id/item_my"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            gb:src="@mipmap/tab_my"
+            gb:text="@string/tab_item_my_title"></com.gamebox_idtkown.views.widgets.GBTabBarItem>
+    </LinearLayout>
+</RelativeLayout>

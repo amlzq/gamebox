@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <com.gamebox_idtkown.views.widgets.GBActionBar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></com.gamebox_idtkown.views.widgets.GBActionBar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionbar">
+
+        <RelativeLayout
+            android:id="@+id/rl_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/menu_item_hieght"
+            android:layout_marginTop="10dp"
+            >
+
+            <EditText
+                android:id="@+id/et_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:background="#00000000"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_hieght"
+                android:layout_alignParentBottom="true"
+                android:background="@color/gray"></View>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/ok"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/rl_phone"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="确定"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_normal"/>
+    </RelativeLayout>
+</RelativeLayout>

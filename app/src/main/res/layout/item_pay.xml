@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_big"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_toRightOf="@+id/icon"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"/>
+
+        <TextView
+            android:id="@+id/other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/origration"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/font_tiny"/>
+
+        <ImageView
+            android:id="@+id/origration"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:gravity="center_vertical"
+            android:src="@mipmap/my_origration2"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/spacing_big"
+        android:layout_marginRight="@dimen/spacing_big"
+        android:background="@color/gray"/>
+</RelativeLayout>

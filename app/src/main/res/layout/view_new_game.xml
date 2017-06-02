@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                xmlns:gb="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+                android:background="@color/black">
+
+    <com.gamebox_idtkown.views.widgets.GBVGameListView
+        android:id="@+id/hot_game"
+        gb:src="@mipmap/new_game_chosen"
+        gb:text="@string/new_game_chosen_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionbar"
+        android:background="@color/white"></com.gamebox_idtkown.views.widgets.GBVGameListView>
+
+    <com.gamebox_idtkown.views.widgets.GBHGameListView
+        android:id="@+id/new_game"
+        gb:src="@mipmap/new_game"
+        gb:text="@string/new_game_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hot_game"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        ></com.gamebox_idtkown.views.widgets.GBHGameListView>
+
+    <com.gamebox_idtkown.views.widgets.GBLoadMoreView
+        android:id="@+id/loadMoreView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_gamelist_title_height"
+        android:layout_below="@+id/new_game"
+        android:background="@color/white"
+        ></com.gamebox_idtkown.views.widgets.GBLoadMoreView>
+</RelativeLayout>

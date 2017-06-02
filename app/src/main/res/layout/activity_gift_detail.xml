@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:gb="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+
+    <com.gamebox_idtkown.views.widgets.GBScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:id="@+id/section"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                >
+
+                <ImageView
+                    android:id="@+id/icon2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_actionbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/action_bar_height"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="5dp">
+
+                            <com.gamebox_idtkown.views.widgets.GBImageButton
+                                android:id="@+id/back"
+                                android:layout_width="@dimen/action_bar_logo_width"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                gb:src="@mipmap/back"
+                                />
+
+                            <com.gamebox_idtkown.views.widgets.MarqueeTextView
+                                android:id="@+id/title2"
+                                android:layout_width="200dp"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true"
+                                android:gravity="center_vertical"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/font_large"
+                                android:ellipsize="marquee"
+                                android:focusableInTouchMode="true"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rl_actionbar"
+                        android:layout_marginTop="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/view_gamelist_item_hieght"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginRight="30dp"
+                            android:orientation="horizontal">
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                >
+
+                                <View
+                                    android:id="@+id/dot"
+                                    android:layout_width="6dp"
+                                    android:layout_height="6dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/gift_dot_selector"></View>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="6dp"
+                                    >
+
+                                    <TextView
+                                        android:id="@+id/num_price"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_above="@+id/rl_left_line"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_marginRight="32.5dp"
+                                        android:gravity="center"
+                                        android:text="剩余数量"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/font_snormal"
+                                        />
+
+                                    <View
+                                        android:id="@+id/rl_left_line"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/line_hieght"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="32.5dp"
+                                        android:background="#e0000000"></View>
+
+                                    <TextView
+                                        android:id="@+id/surplusNum"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rl_left_line"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="32.5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:gravity="center"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/font_snormal"
+                                        />
+                                </RelativeLayout>
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                >
+
+                                <View
+                                    android:id="@+id/dot2"
+                                    android:layout_width="6dp"
+                                    android:layout_height="6dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:background="@drawable/gift_dot_selector"></View>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="6dp"
+                                    >
+
+                                    <TextView
+                                        android:id="@+id/yxtime"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_above="@+id/rl_right_line"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_marginLeft="32.5dp"
+                                        android:gravity="center"
+                                        android:text="有效日期"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/font_snormal"
+                                        />
+
+                                    <View
+                                        android:id="@+id/rl_right_line"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/line_hieght"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="32.5dp"
+                                        android:background="#e0000000"></View>
+
+                                    <TextView
+                                        android:id="@+id/access_date"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/rl_right_line"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="32.5dp"
+                                        android:layout_marginTop="2dp"
+                                        android:gravity="center"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/font_snormal"
+                                        />
+                                </RelativeLayout>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/icon3"
+                            android:layout_width="@dimen/view_gamelist_item_hieght"
+                            android:layout_height="@dimen/view_gamelist_item_hieght"
+                            android:layout_centerInParent="true"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/icon_default"
+                            />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:id="@+id/section2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/section"
+                android:layout_marginBottom="@dimen/font_larger"
+                android:layout_marginLeft="@dimen/spacing_big"
+                android:layout_marginRight="@dimen/spacing_big">
+
+                <RelativeLayout
+                    android:id="@+id/rl_title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/gift_item_hieght"
+                    >
+
+                    <ImageView
+                        android:id="@+id/gift_icon"
+                        android:layout_width="4dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:background="@color/blue"
+                        />
+
+                    <TextView
+                        android:id="@+id/gift_title2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/gift_icon"
+                        android:gravity="center"
+                        android:text="礼包内容"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_snormal"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/gift_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/rl_title2"
+                    android:layout_marginLeft="9dp"
+                    android:textColor="@color/gray_light"
+                    android:textSize="@dimen/font_snormal"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/section3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/section2"
+                android:layout_marginBottom="@dimen/font_larger"
+                android:layout_marginLeft="@dimen/spacing_big"
+                android:layout_marginRight="@dimen/spacing_big">
+
+                <RelativeLayout
+                    android:id="@+id/rl_title3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/gift_item_hieght"
+                    >
+
+                    <ImageView
+                        android:id="@+id/gift_icon3"
+                        android:layout_width="4dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:background="@color/blue"
+                        />
+
+                    <TextView
+                        android:id="@+id/gift_title3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/gift_icon3"
+                        android:gravity="center"
+                        android:text="使用方法"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_snormal"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/gift_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/rl_title3"
+                    android:layout_marginLeft="9dp"
+                    android:textColor="@color/gray_light"
+                    android:textSize="@dimen/font_snormal"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/section4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/section3"
+                android:layout_marginBottom="@dimen/font_larger"
+                android:layout_marginLeft="@dimen/spacing_big"
+                android:layout_marginRight="@dimen/spacing_big">
+
+                <RelativeLayout
+                    android:id="@+id/rl_title4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/gift_item_hieght"
+                    >
+
+                    <ImageView
+                        android:id="@+id/gift_icon4"
+                        android:layout_width="4dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:background="@color/blue"
+                        />
+
+                    <TextView
+                        android:id="@+id/gift_title4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/gift_icon4"
+                        android:gravity="center"
+                        android:text="使用渠道"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/font_snormal"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/gift_channel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/rl_title4"
+                    android:layout_marginLeft="9dp"
+                    android:paddingBottom="60dp"
+                    android:textColor="@color/gray_light"
+                    android:textSize="@dimen/font_snormal"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </com.gamebox_idtkown.views.widgets.GBScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/section5"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:alpha="0.95"
+        android:background="@color/bg2"
+        >
+
+        <View
+            android:id="@+id/tab_line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray2"></View>
+
+        <com.gamebox_idtkown.views.widgets.GBDownloadBtn
+            android:id="@+id/gift_get"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:text="领取"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_normal"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bg_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        >
+
+        <com.gamebox_idtkown.views.widgets.GBActionBar
+            android:id="@+id/actionbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            ></com.gamebox_idtkown.views.widgets.GBActionBar>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gameInfo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_common_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:clickable="true"
+        android:visibility="gone"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray2"></View>
+
+        <ImageView
+            android:id="@+id/app_icon"
+            android:layout_width="@dimen/view_gamelist_item_hieght"
+            android:layout_height="@dimen/view_gamelist_item_hieght"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:layout_marginTop="1px"
+            android:gravity="center_vertical"
+            android:src="@mipmap/icon_default"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_gamelist_item_hieght"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:layout_toLeftOf="@+id/download3"
+            android:layout_toRightOf="@+id/app_icon"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rl_title"
+                android:layout_width="match_parent"
+                android:layout_height="25dp">
+
+                <TextView
+                    android:id="@+id/app_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:maxLength="8"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_normal"
+                    />
+
+                <com.gamebox_idtkown.views.widgets.GBGameTypeTextView
+                    android:id="@+id/type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@+id/app_title"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_stiny"
+                    />
+
+                <com.gamebox_idtkown.views.widgets.GBGameTypeTextView
+                    android:id="@+id/has_gift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@+id/type"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:text="礼包"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_stiny"
+                    />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/rl_title"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray_light"
+                android:textSize="@dimen/font_tiny"/>
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/size"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/gray_light"
+                android:textSize="@dimen/font_tiny"
+                />
+        </RelativeLayout>
+
+        <com.gamebox_idtkown.views.widgets.GBDownloadBtn
+            android:id="@+id/download2"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:clickable="false"
+            android:gravity="center_vertical"
+            android:text="@string/download"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_small"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_hieght"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

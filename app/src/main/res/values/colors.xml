@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- grayscale -->
+    <color name="gray2">#a5a5a5</color>
+    <color name="gray">#dedede</color>
+    <color name="gray_light">#7e7e7e</color>
+    <color name="gray_dark">#545454</color>
+    <color name="black">#333333</color>
+    <color name="white">#ffffff</color>
+
+    <color name="bg">#fafafa</color>
+    <color name="bg2">#f0f0f0</color>
+
+
+    <!-- basic colors -->
+    <color name="red">#ff5555</color>
+    <color name="blue">#00afff</color>
+    <color name="translucent">#14000000</color>
+    <drawable name="translucent">#14000000</drawable>
+
+    <drawable name="game_detail_down">#f6f7f8</drawable>
+    <color name="download_del">#f6f6f6</color>
+    <color name="btn_pressed">#999999</color>
+
+
+    <color name="holo_blue_dark">#0099cc</color>
+    <color name="holo_yellow_dark">#ff8800</color>
+    <color name="holo_green_dark">#669900</color>
+    <color name="holo_purple_dark">#9933cc</color>
+    <color name="holo_red_dark">#cc0000</color>
+
+    <integer-array name="progress_colors">
+        <item>@color/holo_blue_dark</item>
+        <item>@color/holo_yellow_dark</item>
+        <item>@color/holo_green_dark</item>
+        <item>@color/holo_purple_dark</item>
+        <item>@color/holo_red_dark</item>
+    </integer-array>
+
+</resources>

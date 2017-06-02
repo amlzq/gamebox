@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/rl_get_view"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="154dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="40dp"
+                android:text="分享到"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#Fa7500"
+                android:textSize="@dimen/font_large"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/title"
+                >
+
+                <LinearLayout
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true">
+
+                    <RelativeLayout
+                        android:id="@+id/rlShare1"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="60dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/share1"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:background="@mipmap/wechat_friend"/>
+
+                            <TextView
+                                android:layout_width="50dp"
+                                android:layout_height="20dp"
+                                android:layout_alignLeft="@id/share1"
+                                android:layout_below="@id/share1"
+                                android:layout_marginTop="5dp"
+                                android:text="朋友圈"
+                                android:gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="@color/gray_light"
+                                android:textSize="@dimen/font_small"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlShare2"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_toRightOf="@+id/rlShare1"
+                        android:layout_weight="1"
+                        android:clickable="true">
+
+                        <RelativeLayout
+                            android:layout_width="60dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/share2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:background="@mipmap/wechat"/>
+
+                            <TextView
+                                android:layout_width="50dp"
+                                android:layout_height="20dp"
+                                android:layout_alignLeft="@id/share2"
+                                android:layout_below="@id/share2"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text="微信好友"
+                                android:textAlignment="center"
+                                android:textColor="@color/gray_light"
+                                android:textSize="@dimen/font_small"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlShare3"
+                        android:layout_width="0dp"
+                        android:layout_height="80dp"
+                        android:layout_toRightOf="@+id/rlShare2"
+                        android:layout_weight="1"
+                        android:clickable="true">
+
+                        <RelativeLayout
+                            android:layout_width="60dp"
+                            android:layout_height="70dp"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/share3"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:background="@mipmap/copy"/>
+
+                            <TextView
+                                android:layout_width="50dp"
+                                android:layout_height="20dp"
+                                android:layout_alignLeft="@id/share3"
+                                android:layout_below="@id/share3"
+                                android:layout_marginTop="5dp"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:text="复制链接"
+                                android:textAlignment="center"
+                                android:textColor="@color/gray_light"
+                                android:textSize="@dimen/font_small"/>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="225dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/gift_get_success"
+                />
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>

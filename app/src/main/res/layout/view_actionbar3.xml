@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large"
+        />
+
+    <com.gamebox_idtkown.views.widgets.GBImageButton
+        android:id="@+id/logo"
+        android:layout_width="@dimen/action_bar_logo_width"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        ></com.gamebox_idtkown.views.widgets.GBImageButton>
+
+
+    <RelativeLayout
+        android:id="@+id/mygame"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btn_bg_selector"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/icon2"
+            android:layout_width="@dimen/view_gamelist_title_icon_width"
+            android:layout_height="@dimen/view_gamelist_title_icon_width"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_normal"
+            android:src="@mipmap/download_mygame"/>
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_toRightOf="@+id/icon2"
+            android:gravity="center"
+            android:text="@string/my_game"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_snormal"/>
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

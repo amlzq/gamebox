@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/rl_get_view"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginTop="174dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:text="版本更新"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#Fa7500"
+                android:textSize="@dimen/font_large"/>
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@+id/title"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_snormal"
+                />
+
+            <TextView
+                android:id="@+id/version"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@+id/title"
+                android:layout_toRightOf="@+id/title2"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray_light"
+                android:textSize="@dimen/font_tiny"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/rl_process_wraper"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/title2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <FrameLayout
+                    android:id="@+id/process_wraper"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/download_process_radius_shape">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/download_process_radius_shape"
+                        >
+                    </View>
+
+                    <View
+                        android:id="@+id/process"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/title"
+                        android:background="@color/blue">
+                    </View>
+                </FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_size"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/rl_process_wraper"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:id="@+id/speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:maxLines="1"
+                    android:textColor="@color/gray_light"
+                    android:textSize="@dimen/font_tiny"
+                    />
+
+                <TextView
+                    android:id="@+id/size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/gray_light"
+                    android:textSize="@dimen/font_tiny"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/btn_copy"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/rl_size"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="取消"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/font_large"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="225dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/gift_get_success"
+                />
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>

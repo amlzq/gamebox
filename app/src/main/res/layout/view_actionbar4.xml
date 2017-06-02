@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/btn_radius_shape"
+        >
+
+        <ImageView
+            android:id="@+id/search_icon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/search"
+            />
+
+        <EditText
+            android:id="@+id/search_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="@dimen/spacing_small"
+            android:layout_toRightOf="@id/search_icon"
+            android:background="#00000000"
+            android:hint="@string/search_gift_text"
+            android:textSize="@dimen/font_snormal"
+            android:singleLine="true"
+            android:textColor="@color/gray_light"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/search_tv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/serach"
+        android:textColor="@color/btn_search_color_selector"/>
+</RelativeLayout>

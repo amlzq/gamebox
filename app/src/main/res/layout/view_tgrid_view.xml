@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <com.gamebox_idtkown.views.widgets.GBTitleView2
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"></com.gamebox_idtkown.views.widgets.GBTitleView2>
+        <com.gamebox_idtkown.views.widgets.GBGridView
+            android:id="@id/gamelist"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@id/titleView"
+            android:horizontalSpacing="1dp"
+            android:verticalSpacing="1dp"
+            android:scrollbars="none"
+            ></com.gamebox_idtkown.views.widgets.GBGridView>
+</RelativeLayout>

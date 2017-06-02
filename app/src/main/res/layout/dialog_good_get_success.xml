@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/rl_get_view"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="154dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="40dp"
+                android:text="兑换成功"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textColor="#Fa7500"
+                android:textSize="@dimen/font_large"/>
+
+            <TextView
+                android:id="@+id/btn_copy"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/title"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="确定"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/font_large"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="225dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/gift_get_success"
+                />
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>

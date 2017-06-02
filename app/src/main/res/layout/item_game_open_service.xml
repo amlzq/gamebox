@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_large"
+        android:clickable="true"
+        >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/button_height_short"
+            android:layout_height="@dimen/button_height_short"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:gravity="center_vertical"
+            android:src="@mipmap/icon_default"
+            />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_toRightOf="@+id/icon"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:ellipsize="marquee"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:maxLength="8"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"
+            />
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/title"
+            android:gravity="center"
+            android:ellipsize="marquee"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:maxLength="6"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/title2"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/holo_red_dark"
+            android:textSize="@dimen/font_snormal"
+            />
+
+        <com.gamebox_idtkown.views.widgets.GBDownloadBtn
+            android:id="@+id/download"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_tiny"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:clickable="false"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/spacing_small"
+            android:text="@string/view"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_tiny"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/spacing_big"
+        android:layout_marginRight="@dimen/spacing_big"
+        android:background="@color/gray"/>
+</RelativeLayout>

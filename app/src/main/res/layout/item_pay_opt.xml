@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        >
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_normal"
+            android:gravity="center_horizontal"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_normal"/>
+
+        <TextView
+            android:id="@+id/rmoney"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/money"
+            android:gravity="center_horizontal"
+            android:text=""
+            android:textColor="@color/gray2"
+            android:textSize="@dimen/font_snormal"/>
+    </RelativeLayout>
+
+</RelativeLayout>

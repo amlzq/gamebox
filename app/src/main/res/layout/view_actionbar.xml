@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+    >
+
+    <com.gamebox_idtkown.views.widgets.GBImageButton
+        android:id="@+id/logo"
+        android:layout_width="@dimen/action_bar_logo_width"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        ></com.gamebox_idtkown.views.widgets.GBImageButton>
+
+    <FrameLayout
+        android:id="@+id/download_wraper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+
+        <com.gamebox_idtkown.views.widgets.GBImageButton
+            android:id="@+id/download"
+            android:layout_width="@dimen/action_bar_height"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            ></com.gamebox_idtkown.views.widgets.GBImageButton>
+        <TextView
+            android:id="@+id/badge"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/tv_badge_bg_selector"
+            android:gravity="center"
+            android:textSize="@dimen/font_small"
+            android:text="0"
+            android:textColor="#ffffff"
+            />
+    </FrameLayout>
+
+
+    <com.gamebox_idtkown.views.widgets.GBImageButton
+        android:id="@+id/search"
+        android:layout_width="@dimen/action_bar_height"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/download_wraper"
+        android:clickable="true">
+    </com.gamebox_idtkown.views.widgets.GBImageButton>
+
+    <com.gamebox_idtkown.views.widgets.GBImageButton
+        android:id="@+id/share"
+        android:layout_width="@dimen/action_bar_height"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:visibility="gone">
+    </com.gamebox_idtkown.views.widgets.GBImageButton>
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"
+        android:textSize="@dimen/font_large"
+        />
+</RelativeLayout>

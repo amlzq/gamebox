@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/game_detail_ppt"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_below="@+id/titleView"
+        android:layout_marginTop="@dimen/spacing_small"></android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:id="@+id/tmp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/game_detail_ppt"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/font_tiny"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@+id/version"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/font_tiny"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_hieght"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/section3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tmp"
+        >
+
+        <TextView
+            android:id="@+id/titleView2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:gravity="center_vertical"
+            android:text="游戏简介"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"></TextView>
+
+        <RelativeLayout
+            android:id="@+id/rl_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleView2"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_marginRight="@dimen/spacing_big">
+
+            <TextView
+                android:id="@+id/detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_big"
+                android:textColor="@color/gray_light"
+                android:textSize="@dimen/font_small"
+                ></TextView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/open"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/rl_detail"
+            android:layout_marginTop="-14dp"
+            android:background="@drawable/btn_bg_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="展开全文"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textSize="@dimen/font_small"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_hieght"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/section4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/section3">
+
+        <TextView
+            android:id="@+id/titleView3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:gravity="center_vertical"
+            android:text="大家都在玩"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"></TextView>
+    </RelativeLayout>
+</RelativeLayout>

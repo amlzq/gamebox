@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+    >
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:clickable="true"
+        >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:gravity="center_vertical"
+            android:src="@mipmap/icon_default"
+            />
+
+        <TextView
+            android:id="@+id/title_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_below="@+id/icon"
+            android:maxLength="8"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_normal"
+            android:visibility="gone"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:layout_toLeftOf="@+id/download"
+            android:layout_toRightOf="@+id/icon"
+            >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:maxLength="8"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                />
+
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/title"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/gray_light"
+                android:textSize="@dimen/font_tiny"
+                />
+        </RelativeLayout>
+
+        <com.gamebox_idtkown.views.widgets.GBDownloadBtn
+            android:id="@+id/download"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:text="@string/get"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_small"
+            />
+
+        <TextView
+            android:id="@+id/prize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/download"
+            android:layout_below="@+id/download"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:maxLength="8"
+            android:textColor="@color/gray_light"
+            android:textSize="@dimen/font_tiny"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:background="@color/gray"/>
+    </RelativeLayout>
+</RelativeLayout>

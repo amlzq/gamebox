@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.gamebox_idtkown.views.widgets.GBActionBar2
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </com.gamebox_idtkown.views.widgets.GBActionBar2>
+
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_normal"
+        android:layout_below="@id/actionbar"
+        android:background="@color/bg2"
+        >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="22dp"
+            android:gravity="center"
+            android:lines="1"
+            android:text="游戏名称"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"
+            />
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/title"
+            android:gravity="center"
+            android:text="开服名称"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"/>
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/title2"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="开服时间"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"
+            />
+
+        <TextView
+            android:id="@+id/download"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/spacing_small"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="详情"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"
+            />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/gamelist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/item"
+        android:divider="@null"
+        android:scrollbars="none"
+        ></ListView>
+</RelativeLayout>

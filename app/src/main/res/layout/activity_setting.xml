@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:gb="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <com.gamebox_idtkown.views.widgets.GBActionBar
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"></com.gamebox_idtkown.views.widgets.GBActionBar>
+
+    <RelativeLayout
+        android:id="@+id/section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actionbar"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+
+        <com.gamebox_idtkown.views.widgets.GBSettingItem
+            android:id="@+id/smart_install"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/menu_item_hieght"
+            gb:text="智能安装(免操作)"></com.gamebox_idtkown.views.widgets.GBSettingItem>
+
+        <View
+            android:id="@+id/line01"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_hieght"
+            android:layout_below="@+id/smart_install"
+            android:background="@color/gray"
+            ></View>
+
+        <com.gamebox_idtkown.views.widgets.GBSettingItem
+            android:id="@+id/no_install"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/menu_item_hieght"
+            android:layout_below="@+id/line01"
+            gb:text="免安装(体验版)"></com.gamebox_idtkown.views.widgets.GBSettingItem>
+
+        <View
+            android:id="@+id/line0"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_hieght"
+            android:layout_below="@+id/no_install"
+            android:background="@color/gray"
+            ></View>
+
+        <com.gamebox_idtkown.views.widgets.GBSettingItem
+            android:id="@+id/g4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/menu_item_hieght"
+            android:layout_below="@+id/line0"
+            gb:text="使用流量下载"></com.gamebox_idtkown.views.widgets.GBSettingItem>
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_hieght"
+            android:layout_below="@+id/g4"
+            android:background="@color/gray"></View>
+
+        <com.gamebox_idtkown.views.widgets.GBSettingItem
+            android:id="@+id/cache"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/menu_item_hieght"
+            android:layout_below="@+id/line"
+            android:background="@drawable/btn_bg_selector"
+            android:clickable="true"
+            gb:text="清除缓存"></com.gamebox_idtkown.views.widgets.GBSettingItem>
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_hieght"
+            android:layout_below="@+id/cache"
+            android:background="@color/gray"
+            ></View>
+
+        <com.gamebox_idtkown.views.widgets.GBSettingItem
+            android:id="@+id/version"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/menu_item_hieght"
+            android:layout_below="@+id/line2"
+            android:background="@drawable/btn_bg_selector"
+            android:clickable="true"
+            gb:text="新版本检测"
+            ></com.gamebox_idtkown.views.widgets.GBSettingItem>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/section"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/menu_item_hieght"
+            android:background="@drawable/btn_bg_selector"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_snormal"/>
+    </RelativeLayout>
+
+</RelativeLayout>

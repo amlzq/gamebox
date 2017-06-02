@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">游戏助手</string>
+    <string name="app_name2">360手机助手</string>
+
+    <!-- tab bar item title text -->
+    <string name="tab_item_index_title">首页</string>
+    <string name="tab_item_chosen_title">精选</string>
+    <string name="tab_item_gifts_title">礼包</string>
+    <string name="tab_item_my_title">我的</string>
+
+    <!-- index banner menu item title text -->
+    <string name="index_banner_cate_title">分类</string>
+    <string name="index_banner_new_title">新游</string>
+    <string name="index_banner_rank_title">排行</string>
+    <string name="index_banner_kaifu_title">开服表</string>
+    <string name="index_banner_bt_title">变态版</string>
+    <string name="index_banner_earn_point_title">赚积分</string>
+
+    <string name="index_banner_hot_game">热门游戏</string>
+    <string name="index_banner_new_game">最新游戏</string>
+    <string name="more">更多</string>
+    <string name="more2">查看更多游戏</string>
+    <string name="download">下载</string>
+    <string name="download2">立即下载</string>
+    <string name="loading">正在加载</string>
+    <string name="loaded">我是有底线的</string>
+
+    <string name="new_game_chosen_title">新游精选</string>
+    <string name="new_game_title">上架新游戏</string>
+
+    <string name="serach">搜索</string>
+    <string name="we_serach">大家都在搜索</string>
+    <string name="my_game">我的游戏</string>
+
+    <string name="tab_0_downloading">待下载</string>
+    <string name="wait_install">下载完成</string>
+    <string name="we_download">大家还下载了</string>
+    <string name="tab_1_update">可升级</string>
+    <string name="download_del">删除</string>
+    <string name="download_detail">详情</string>
+
+    <string name="same_game">同类游戏</string>
+
+    <string name="my_point">我的积分：</string>
+    <string name="earn_point">赚积分</string>
+    <string name="mall_point">积分商城</string>
+
+    <string name="pu_balance">平台币余额：</string>
+    <string name="my_gifts">我的礼包</string>
+
+    <string name="setting">设置</string>
+
+    <string name="game_rank">游戏排行</string>
+
+    <string name="gift">礼包</string>
+
+    <string name="view">查看</string>
+    <string name="search_gift_text">搜索游戏礼包</string>
+    <string name="copy">复制</string>
+    <string name="update">更新</string>
+
+    <string name="get">领取</string>
+    <string name="change">兑换</string>
+    <string name="host">6071.com</string>
+
+    <string name="order_number">订单号：</string>
+    <string name="order_all_money">总额：</string>
+    <string name="order_pay_money">实付：</string>
+
+    <string name="accessibility_service_description">智能安装服务，无需用户的任何操作就可以自动安装程序</string>
+
+
+    <style name="FreeInstallTheme" parent="@style/AppTheme">
+        <item name="android:windowBackground">@color/translucent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+    <string name="preparing">正在打开...</string>
+
+</resources>

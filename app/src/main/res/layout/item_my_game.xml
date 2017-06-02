@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+    >
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_common_height"
+        android:clickable="true"
+        >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/view_gamelist_item_hieght"
+            android:layout_height="@dimen/view_gamelist_item_hieght"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:gravity="center_vertical"
+            android:src="@mipmap/icon_default"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_gamelist_item_hieght"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:layout_toLeftOf="@+id/download"
+            android:layout_toRightOf="@+id/icon"
+            >
+
+            <RelativeLayout
+                android:id="@+id/rl_title"
+                android:layout_width="match_parent"
+                android:layout_height="25dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:maxLength="8"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_normal"
+                    />
+
+                <com.gamebox_idtkown.views.widgets.GBGameTypeTextView
+                    android:id="@+id/type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="3.5dp"
+                    android:layout_toRightOf="@+id/title"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_stiny"
+                    />
+
+                <com.gamebox_idtkown.views.widgets.GBGameTypeTextView
+                    android:id="@+id/gift"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@+id/type"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:text="礼包"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_stiny"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_process_wraper"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/rl_title"
+                >
+
+                <FrameLayout
+                    android:id="@+id/process_wraper"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/download_process_radius_shape">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/download_process_radius_shape"
+                        >
+                    </View>
+
+                    <View
+                        android:id="@+id/process"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/title"
+                        android:background="@color/blue">
+                    </View>
+                </FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_size"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@+id/rl_process_wraper">
+
+                <TextView
+                    android:id="@+id/speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:maxLines="1"
+                    android:textColor="@color/gray_light"
+                    android:textSize="@dimen/font_tiny"
+                    />
+
+                <TextView
+                    android:id="@+id/size2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/gray_light"
+                    android:textSize="@dimen/font_tiny"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/size"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/rl_title"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray_light"
+                android:textSize="@dimen/font_tiny"/>
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/size"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/gray_light"
+                android:textSize="@dimen/font_tiny"
+                />
+        </RelativeLayout>
+
+        <com.gamebox_idtkown.views.widgets.GBDownloadBtn
+            android:id="@+id/download"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:gravity="center_vertical"
+            android:text="@string/download"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_small"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:background="@color/gray"/>
+    </RelativeLayout>
+</RelativeLayout>

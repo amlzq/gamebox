@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/view_gamelist_title_icon_width"
+        android:layout_height="@dimen/view_gamelist_title_icon_width"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/spacing_normal"/>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/spacing_small"
+        android:layout_toRightOf="@+id/icon"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_snormal"/>
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@+id/title"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/red"
+        android:textSize="@dimen/font_snormal"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/origration"
+        android:gravity="center"
+        android:paddingBottom="4dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="4dp"
+        android:textColor="@color/gray_light"
+        android:textSize="@dimen/font_tiny"/>
+
+    <ImageView
+        android:id="@+id/origration"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/spacing_small"
+        android:gravity="center_vertical"
+        android:src="@mipmap/my_origration2"
+        />
+</RelativeLayout>

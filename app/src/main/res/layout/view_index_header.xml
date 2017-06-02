@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:gb="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/index_banner_height"
+        android:background="@color/white">
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/bg"/>
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/index_banner_menu_height"
+            android:layout_alignParentBottom="true"
+            >
+
+            <com.gamebox_idtkown.views.widgets.GBButton
+                android:id="@+id/category"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:tag="0"
+                gb:src="@mipmap/index_banner_cate"
+                gb:text="@string/index_banner_cate_title"
+                />
+
+            <com.gamebox_idtkown.views.widgets.GBButton
+                android:id="@+id/newgame"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:tag="1"
+                gb:src="@mipmap/index_banner_new"
+                gb:text="@string/index_banner_new_title"></com.gamebox_idtkown.views.widgets.GBButton>
+
+            <com.gamebox_idtkown.views.widgets.GBButton
+                android:id="@+id/btgame"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:tag="1"
+                gb:src="@mipmap/bt_game"
+                gb:text="@string/index_banner_bt_title"></com.gamebox_idtkown.views.widgets.GBButton>
+
+            <com.gamebox_idtkown.views.widgets.GBButton
+                android:id="@+id/gamerank"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:tag="2"
+                gb:src="@mipmap/kaifu"
+                gb:text="@string/index_banner_kaifu_title"></com.gamebox_idtkown.views.widgets.GBButton>
+
+            <com.gamebox_idtkown.views.widgets.GBButton
+                android:id="@+id/eran_point"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:tag="3"
+                gb:src="@mipmap/index_banner_eran_point"
+                gb:text="@string/index_banner_earn_point_title"></com.gamebox_idtkown.views.widgets.GBButton>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray"/>
+</RelativeLayout>

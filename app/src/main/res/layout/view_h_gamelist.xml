@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_gamelist_title_height"
+        android:background="@color/white">
+        <com.gamebox_idtkown.views.widgets.GBTitleView
+            android:id="@+id/titleView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"></com.gamebox_idtkown.views.widgets.GBTitleView>
+    </RelativeLayout>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray"
+        android:layout_below="@+id/rl_title"></View>
+    <com.gamebox_idtkown.views.widgets.GBListView
+        android:id="@+id/gamelist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line"></com.gamebox_idtkown.views.widgets.GBListView>
+</RelativeLayout>
