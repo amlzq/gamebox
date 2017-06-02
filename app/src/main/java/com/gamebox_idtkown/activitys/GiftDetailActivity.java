@@ -162,6 +162,9 @@ public class GiftDetailActivity extends BaseActionBarActivity<GBActionBar> {
     @Inject
     GoodDetailEngin goodDetailEngin;
 
+    @BindView(R.id.score)
+    TextView tvScore;
+
     @Override
     public int getLayoutID() {
         return R.layout.activity_gift_detail;
@@ -291,6 +294,7 @@ public class GiftDetailActivity extends BaseActionBarActivity<GBActionBar> {
 
     private void showInfo() {
         if (goodList != null) {
+            tvScore.setVisibility(View.VISIBLE);
             rlSection4.setVisibility(View.GONE);
 
             actionBar.setTitle(goodList.getName());
@@ -305,7 +309,8 @@ public class GiftDetailActivity extends BaseActionBarActivity<GBActionBar> {
             tvNumPrice.setText("积分");
             btnGiftGet.setText("兑换");
             tvGiftTitle.setText("兑换内容");
-
+            String score = "当前积分：<font color=#ff0000>" + GBApplication.userInfo.getPoint() + "</font>";
+            tvScore.setText(Html.fromHtml(score));
             String desc = goodList.getName() + "<br/>";
             if (goodList.getType_id().equals("2")) {
                 desc = goodList.getDesp();
@@ -314,7 +319,6 @@ public class GiftDetailActivity extends BaseActionBarActivity<GBActionBar> {
             } else {
                 desc += "价值<font color=#ff0000>" + goodList.getType_val() + "元</font>";
             }
-
 
             tvContext.setText(Html.fromHtml(desc));
             tvMethod.setText(goodList.getUse_method());
@@ -329,7 +333,10 @@ public class GiftDetailActivity extends BaseActionBarActivity<GBActionBar> {
             });
 
         }
-        if (giftDetail != null) {
+        if (giftDetail != null)
+
+        {
+            tvScore.setVisibility(View.GONE);
             actionBar.setTitle(giftDetail.getName());
             actionBar.hideMenuItem();
             tvTitle2.setText(giftDetail.getName());
@@ -341,7 +348,6 @@ public class GiftDetailActivity extends BaseActionBarActivity<GBActionBar> {
             });
             tvAccessDate.setText(giftDetail.getAccess_date());
             tvSurplusNum.setText(giftDetail.getSurplusNum());
-
 
             tvContext.setText(Html.fromHtml(giftDetail.getContent()));
             tvMethod.setText(Html.fromHtml(giftDetail.getChange_note()));
@@ -407,18 +413,20 @@ public class GiftDetailActivity extends BaseActionBarActivity<GBActionBar> {
 
 
         final int actionBarHeight = ScreenUtil.dip2px(this, 50);
-        scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-            @Override
-            public void onScrollChanged() {
-                int y = scrollView.getScrollY();
-                if (y > 0) {
-                    rlActionbar.setAlpha(0);
-                } else if (y <= 0) {
-                    rlActionbar.setAlpha(1);
-                }
-                bgActionbar.setAlpha((float) y / actionBarHeight);
-            }
-        });
+        scrollView.getViewTreeObserver().
+
+                addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+                    @Override
+                    public void onScrollChanged() {
+                        int y = scrollView.getScrollY();
+                        if (y > 0) {
+                            rlActionbar.setAlpha(0);
+                        } else if (y <= 0) {
+                            rlActionbar.setAlpha(1);
+                        }
+                        bgActionbar.setAlpha((float) y / actionBarHeight);
+                    }
+                });
 
     }
 

@@ -8,8 +8,8 @@ android {
         applicationId "com.gamebox_idtkown"
         minSdkVersion 17
         targetSdkVersion 22
-        versionCode 108
-        versionName "1.0.39"
+        versionCode 110
+        versionName "1.0.40"
         multiDexEnabled true
     }
 

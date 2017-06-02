@@ -61,7 +61,7 @@ public abstract class BaseActionBarActivity<T extends GBBaseActionBar> extends B
         if (type == EventBusMessage.RE_INIT){
             setActionBar();
             setRefreshLayout();
-            loadData();
+//            loadData();
         }
     }
 }

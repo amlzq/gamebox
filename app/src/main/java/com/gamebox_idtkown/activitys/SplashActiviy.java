@@ -135,23 +135,7 @@ public class SplashActiviy extends InstrumentedActivity {
                                             }
                                         });
                                     }
-                                    StateUtil.setRipple(tvJump);
-                                    tvJump.setVisibility(View.VISIBLE);
-                                    loading.clearAnimation();
-                                    loading.setVisibility(View.GONE);
-                                    text.setText("");
-                                    initCount.setText("");
-                                    tvJump.setTextColor(GoagalInfo.getInItInfo().androidColor);
-                                    lanuchImageView.postDelayed(new Runnable() {
-                                                                    @Override
-                                                                    public void run() {
-                                                                        if (!isJump) {
-                                                                            goToMainActivity();
-                                                                        }
-                                                                    }
-                                                                }
 
-                                            , 4000);
                                 }
                             });
                         } catch (IOException e) {
@@ -160,7 +144,23 @@ public class SplashActiviy extends InstrumentedActivity {
                     }
                 });
 
+                StateUtil.setRipple(tvJump);
+                tvJump.setVisibility(View.VISIBLE);
+                loading.clearAnimation();
+                loading.setVisibility(View.GONE);
+                text.setText("");
+                initCount.setText("");
+                tvJump.setTextColor(GoagalInfo.getInItInfo().androidColor);
+                lanuchImageView.postDelayed(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    if (!isJump) {
+                                                        goToMainActivity();
+                                                    }
+                                                }
+                                            }
 
+                        , 4000);
 
 
 

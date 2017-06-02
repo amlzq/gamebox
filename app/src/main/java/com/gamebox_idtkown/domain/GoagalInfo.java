@@ -119,26 +119,9 @@ public class GoagalInfo {
             appInfo = JSON.parseObject(result, BatInfo.class);
             LogUtil.msg("批量打包数据->" + result);
         } catch (Exception e) {
-            if (zf != null) {
-                try {
-                    zf.close();
-                } catch (IOException e2) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-            LogUtil.msg("批量打包数据解析失败->" + e, LogUtil.W);
-        } finally {
-            if (zf != null) {
-                try {
-                    zf.close();
-                } catch (IOException e2) {
-                    // TODO Auto-generated catch block
-                    e2.printStackTrace();
-                }
-            }
-        }
 
+            LogUtil.msg("批量打包数据解析失败->" + e, LogUtil.W);
+        }
         name = "gamechannel.json";
         if (result1 != null) {
             FileUtil.writeInfoInSDCard(context, result1, dir, name);
@@ -166,6 +149,16 @@ public class GoagalInfo {
             LogUtil.msg("公钥->" + result2);
             if (result2 != null) {
                 GoagalInfo.publicKey = getPublicKey(result2);
+            }
+        }
+
+
+        if (zf != null) {
+            try {
+                zf.close();
+            } catch (IOException e2) {
+                // TODO Auto-generated catch block
+                e2.printStackTrace();
             }
         }
 
