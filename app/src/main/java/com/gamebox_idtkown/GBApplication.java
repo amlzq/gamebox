@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
-
 import android.net.http.HttpResponseCache;
 
 import com.gamebox_idtkown.cache.UserInfoCache;
@@ -29,8 +28,6 @@ import com.gamebox_idtkown.utils.ScreenUtil;
 import com.gamebox_idtkown.utils.TaskUtil;
 import com.lody.virtual.client.core.VirtualCore;
 import com.squareup.picasso.Picasso;
-import com.tencent.tinker.loader.app.TinkerApplication;
-import com.tencent.tinker.loader.shareutil.ShareConstants;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.analytics.game.UMGameAgent;
 
@@ -39,27 +36,15 @@ import org.greenrobot.eventbus.EventBus;
 import java.io.File;
 import java.io.IOException;
 
-import cn.jpush.android.api.JPushInterface;
 
 
 /**
  * Created by zhangkai on 16/9/22.
  */
-public class GBApplication extends TinkerApplication {
+public class GBApplication extends Application {
     public static boolean is_swich = false;
 
 
-    public GBApplication() {
-        super(
-                //tinkerFlags, tinker支持的类型，dex,library，还是全部都支持！
-                ShareConstants.TINKER_ENABLE_ALL,
-                //ApplicationLike的实现类，只能传递字符串
-                "com.gamebox_idtkown.GBApplicationLike",
-                //Tinker的加载器，一般来说用默认的即可
-                "com.tencent.tinker.loader.TinkerLoader",
-                //tinkerLoadVerifyFlag, 运行加载时是否校验dex与,ib与res的Md5
-                false);
-    }
 
     @Override
     public void onCreate() {
