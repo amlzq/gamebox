@@ -168,6 +168,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activitys.IntegralDetailsActivity"></activity>
+
         <activity
             android:name=".activitys.GameOpenServiceActivity"
             android:screenOrientation="portrait"></activity>

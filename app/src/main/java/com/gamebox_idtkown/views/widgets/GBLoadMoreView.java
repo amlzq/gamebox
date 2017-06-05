@@ -99,7 +99,7 @@ public class GBLoadMoreView extends BaseView {
     }
 
     private int statusBarHeight = 0;
-    private int otherHeight = 50;
+    private int otherHeight = 0;
     private int itemHeight = 95;
 
     public void setStatusBarHeight(int statusBarHeight) {

@@ -81,9 +81,11 @@ public class GiftListActivity extends BaseGameListActivity<GiftDetail, GBActionB
         actionBar.setOnItemClickListener(new GBActionBar5.OnItemClickListener() {
             @Override
             public void onItemClick(View view) {
-                Intent intent = new Intent(getBaseContext(), MyGiftActivity.class);
-                intent.putExtra("game_id", game_id);
-                startActivity(intent);
+                if(startLoginActivity()) {
+                    Intent intent = new Intent(getBaseContext(), MyGiftActivity.class);
+                    intent.putExtra("game_id", game_id);
+                    startActivity(intent);
+                }
             }
 
             @Override

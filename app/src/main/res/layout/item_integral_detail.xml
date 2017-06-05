@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/action_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:gravity="center_vertical"
+            android:text="操作时间："
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_normal"/>
+
+        <TextView
+            android:id="@+id/action_time_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/action_time"
+            android:gravity="center_vertical"
+            android:textColor="@color/gray2"
+            android:textSize="@dimen/font_normal"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:layout_marginRight="@dimen/spacing_big"
+            android:background="@color/gray"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/head"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/action_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:gravity="center_vertical"
+            android:text="操作类型："
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_normal"/>
+
+
+        <com.gamebox_idtkown.views.widgets.MarqueeTextView
+            android:id="@+id/action_title_desc"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/action_title"
+            android:gravity="center_vertical"
+            android:ellipsize="marquee"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/gray2"
+            android:textSize="@dimen/font_normal"/>
+
+        <TextView
+            android:id="@+id/point_title_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:textColor="@color/red"
+            android:layout_marginRight="@dimen/spacing_normal"
+            android:textSize="@dimen/font_normal"/>
+
+        <TextView
+            android:id="@+id/point_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/spacing_big"
+            android:gravity="center_vertical"
+            android:layout_toLeftOf="@+id/point_title_desc"
+            android:text="积分数量："
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_normal"/>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/order_bg"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_below="@+id/content"
+        android:background="@color/bg"></View>
+</RelativeLayout>

@@ -6,61 +6,55 @@ import com.gamebox_idtkown.R;
 import com.gamebox_idtkown.constans.DescConstans;
 import com.gamebox_idtkown.core.db.greendao.DownloadInfo;
 import com.gamebox_idtkown.core.listeners.Callback;
-import com.gamebox_idtkown.di.dagger2.components.DaggerEnginComponent;
-import com.gamebox_idtkown.domain.PayRecordInfo;
+import com.gamebox_idtkown.domain.IntegralDetailInfo;
 import com.gamebox_idtkown.domain.ResultInfo;
-import com.gamebox_idtkown.engin.PayRecordEngin;
+import com.gamebox_idtkown.engin.IntegralDetailEngin;
 import com.gamebox_idtkown.net.entry.Response;
-import com.gamebox_idtkown.views.adpaters.PayRecordAdpater;
+import com.gamebox_idtkown.views.adpaters.IntegralDetailAdapter;
 import com.gamebox_idtkown.views.widgets.GBActionBar;
+import com.gamebox_idtkown.views.widgets.GBActionBar5;
 
 import java.util.List;
-
-import javax.inject.Inject;
 
 import butterknife.BindView;
 
 /**
- * Created by zhangkai on 2017/2/6.
+ * Created by zhangkai on 2017/6/5.
  */
 
-public class PayRecordActivity extends BaseGameListActivity<PayRecordInfo, GBActionBar> {
-
+public class IntegralDetailsActivity extends BaseGameListActivity<IntegralDetailInfo, GBActionBar> {
     @BindView(R.id.gamelist)
     ListView gamelist;
 
-    @Inject
-    PayRecordEngin payRecordEngin;
+    IntegralDetailEngin integralDetailEngin;
 
-    PayRecordAdpater adapter;
+    IntegralDetailAdapter adapter;
 
     @Override
     public int getLayoutID() {
-        return R.layout.activity_pay_record;
+        return R.layout.activity_integral_detail;
     }
 
     @Override
     public void initVars() {
         super.initVars();
-
-        DaggerEnginComponent.create().injectPayRecord(this);
+        integralDetailEngin = new IntegralDetailEngin();
     }
 
     @Override
     public void initViews() {
         super.initViews();
         setBackListener();
-        actionBar.setTitle("充值记录");
+        actionBar.setTitle("积分明细");
         actionBar.hideMenuItem();
 
-        adapter = new PayRecordAdpater(this);
+        adapter = new IntegralDetailAdapter(this);
         adapter.setListView(gamelist);
-        loadMoreView.setItemHeight(108);
         addHeaderAndFooter(gamelist, true);
         gamelist.setAdapter(adapter);
         removeFooterView();
 
-
+        loadMoreView.setItemHeight(80);
     }
 
     @Override
@@ -80,13 +74,13 @@ public class PayRecordActivity extends BaseGameListActivity<PayRecordInfo, GBAct
     @Override
     public void loadData() {
         super.loadData();
-        getPayRecord();
+        getIntegralDetail();
     }
 
-    private void getPayRecord() {
-        payRecordEngin.getPayRecord(page, limit, new Callback<List<PayRecordInfo>>() {
+    private void getIntegralDetail() {
+        integralDetailEngin.getList(page, limit, new Callback<List<IntegralDetailInfo>>() {
             @Override
-            public void onSuccess(final ResultInfo<List<PayRecordInfo>> resultInfo) {
+            public void onSuccess(final ResultInfo<List<IntegralDetailInfo>> resultInfo) {
                 success(resultInfo, adapter);
             }
 

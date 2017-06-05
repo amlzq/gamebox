@@ -25,6 +25,7 @@ import com.gamebox_idtkown.utils.TaskUtil;
 import com.gamebox_idtkown.utils.ToastUtil;
 import com.gamebox_idtkown.views.adpaters.GBEarnPointAdapter;
 import com.gamebox_idtkown.views.widgets.GBActionBar;
+import com.gamebox_idtkown.views.widgets.GBActionBar5;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +39,7 @@ import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
 /**
  * Created by zhangkai on 16/9/26.
  */
-public class EarnPointAcitivty extends BaseGameListActivity<EarnPointTaskInfo, GBActionBar> {
+public class EarnPointAcitivty extends BaseGameListActivity<EarnPointTaskInfo, GBActionBar5> {
 
     @Inject
     EarnPointTaskEngin earnPointTaskEngin;
@@ -64,6 +65,18 @@ public class EarnPointAcitivty extends BaseGameListActivity<EarnPointTaskInfo, G
         super.initViews();
         actionBar.setTitle("赚积分");
         setBackListener();
+        actionBar.setOnItemClickListener(new GBActionBar5.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view) {
+                Intent intent = new Intent(EarnPointAcitivty.this, IntegralDetailsActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onClose(View view) {
+
+            }
+        });
 
         adapter = new GBEarnPointAdapter(this);
         listView.setAdapter(adapter);

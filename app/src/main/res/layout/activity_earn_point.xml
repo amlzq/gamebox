@@ -4,11 +4,11 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-    <com.gamebox_idtkown.views.widgets.GBActionBar
+    <com.gamebox_idtkown.views.widgets.GBActionBar5
         android:id="@+id/actionbar"
         android:layout_width="match_parent"
         android:layout_height="50dp">
-    </com.gamebox_idtkown.views.widgets.GBActionBar>
+    </com.gamebox_idtkown.views.widgets.GBActionBar5>
 
     <se.emilsjolander.stickylistheaders.StickyListHeadersListView
         android:id="@+id/earn_point_list"
