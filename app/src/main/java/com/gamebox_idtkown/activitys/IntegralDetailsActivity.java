@@ -55,6 +55,8 @@ public class IntegralDetailsActivity extends BaseGameListActivity<IntegralDetail
         removeFooterView();
 
         loadMoreView.setItemHeight(80);
+
+        addScrollListener(gamelist);
     }
 
     @Override

@@ -393,6 +393,8 @@ public class GiftDetailActivity extends BaseActionBarActivity<GBActionBar> {
                                                         ("#999999"));
                                             }
                                             return;
+                                        } else if (resultInfo.code == -2) {
+                                            ToastUtil.toast2(getBaseContext(), getMessage(resultInfo.message, "领取失败"));
                                         } else {
                                             getGameInfo(giftDetail.getGameId(), "1");
                                             ToastUtil.toast2(getBaseContext(), getMessage(resultInfo.message, "领取失败"));

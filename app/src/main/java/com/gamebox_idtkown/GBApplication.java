@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.http.HttpResponseCache;
+import android.os.Build;
 
 import com.gamebox_idtkown.cache.UserInfoCache;
 import com.gamebox_idtkown.core.ApkUtil;
@@ -91,6 +92,14 @@ public class GBApplication extends Application {
 
         freeSO();
 
+        fix_fuck_bug();
+
+    }
+
+    private void fix_fuck_bug(){
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.FROYO) {
+            System.setProperty("http.keepAlive", "false");
+        }
     }
 
     private void freeSO() {

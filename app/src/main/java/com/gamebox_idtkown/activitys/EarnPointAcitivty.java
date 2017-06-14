@@ -64,6 +64,7 @@ public class EarnPointAcitivty extends BaseGameListActivity<EarnPointTaskInfo, G
     public void initViews() {
         super.initViews();
         actionBar.setTitle("赚积分");
+        actionBar.showMenuItem("积分明细");
         setBackListener();
         actionBar.setOnItemClickListener(new GBActionBar5.OnItemClickListener() {
             @Override

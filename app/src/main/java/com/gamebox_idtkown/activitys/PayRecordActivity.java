@@ -59,7 +59,7 @@ public class PayRecordActivity extends BaseGameListActivity<PayRecordInfo, GBAct
         addHeaderAndFooter(gamelist, true);
         gamelist.setAdapter(adapter);
         removeFooterView();
-
+        addScrollListener(gamelist);
 
     }
 
