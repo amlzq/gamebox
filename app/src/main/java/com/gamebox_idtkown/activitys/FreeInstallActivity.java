@@ -19,9 +19,6 @@ public class FreeInstallActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
         FreeInstallUtil.openApkFromAssets(this, apkName, packageName);
     }
 
@@ -39,7 +36,7 @@ public class FreeInstallActivity extends Activity {
     @Override
     public void onPause() {
         super.onPause();
-        // //集成基本统计分析, 结束 Session
+        //集成基本统计分析, 结束 Session
         UMGameAgent.onPause(this);
     }
 }

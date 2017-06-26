@@ -409,11 +409,18 @@ public class LoginActivity extends BaseActionBarActivity<GBActionBar> {
         }
 
         if (view.getId() == btnForgot.getId()) {
+            ForgotActivity.loginActivity = this;
             Intent intent = new Intent(this, ForgotActivity.class);
             intent.putExtra("phone", etPhone.getText());
             startActivity(intent);
             return;
         }
 
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        ForgotActivity.loginActivity = null;
     }
 }

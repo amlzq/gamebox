@@ -75,9 +75,12 @@ public class GoagalInfo {
                 GoagalInfo.channelInfo = JSON.parseObject(_inItInfo.agent_info, ChannelInfo.class);
                 String name = "gamechannel.json";
                 FileUtil.writeInfoInSDCard(context, _inItInfo.agent_info, PathUtil.getGolgalDir(), name);
-                PreferenceUtil.getImpl(context).putString("lastLogin", GBApplication.userInfo.getUserId());
+                if (GBApplication.userInfo != null) {
+                    PreferenceUtil.getImpl(context).putString("lastLogin", GBApplication.userInfo.getUserId());
+                }
                 _inItInfo.setThemeColor();
                 EventBus.getDefault().post(EventBusMessage.RE_INIT);
+
             }
         } catch (Exception e) {
             e.printStackTrace();

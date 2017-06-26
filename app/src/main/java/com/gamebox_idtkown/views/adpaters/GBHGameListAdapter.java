@@ -160,6 +160,14 @@ public class GBHGameListAdapter extends GBBaseAdapter<GameInfo> {
                 holder.tvGift.setVisibility(View.GONE);
         }
 
+        if(gameInfo.benefits){
+            holder.tvBenefits.setText("返利" + gameInfo.benefits_rate + "%");
+            holder.tvBenefits.setVisibility(View.VISIBLE);
+        }else {
+
+            holder.tvBenefits.setVisibility(View.GONE);
+        }
+
         DownloadInfo downloadInfo = DownloadManagerService.getDownloadInfo(gameInfo);
         if (downloadInfo != null && (downloadInfo.status != ApkStatus.DOWNLOADED && downloadInfo.status != ApkStatus
                 .INSTALLED && downloadInfo.status != ApkStatus.UNDOWNLOAD)
@@ -241,11 +249,15 @@ public class GBHGameListAdapter extends GBBaseAdapter<GameInfo> {
         @BindView(R.id.process)
         View processView;
 
+        @BindView(R.id.benefits)
+        TextView tvBenefits;
+
 
         public ViewHolder(View view) {
             ButterKnife.bind(this, view);
             StateUtil.setDrawable(context, tvGift, 1.5f, Color.parseColor("#ffc000"));
             StateUtil.setDrawable(context, tvType, 1.5f, Color.parseColor("#ff5555"));
+            StateUtil.setDrawable(context, tvBenefits, 1.5f, Color.parseColor("#ad55ff"));
             StateUtil.setDrawable(context, processView, 4);
             StateUtil.setRipple(rlItem);
         }

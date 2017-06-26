@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:gb="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                xmlns:gb="http://schemas.android.com/apk/res-auto"
     >
 
     <View
@@ -33,6 +33,12 @@
             android:layout_weight="1"
             gb:src="@mipmap/tab_chosen"
             gb:text="@string/tab_item_chosen_title"></com.gamebox_idtkown.views.widgets.GBTabBarItem>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </View>
 
         <com.gamebox_idtkown.views.widgets.GBTabBarItem
             android:id="@+id/item_gifts"

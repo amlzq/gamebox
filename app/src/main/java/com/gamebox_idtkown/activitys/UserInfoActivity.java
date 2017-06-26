@@ -280,7 +280,7 @@ public class UserInfoActivity extends BaseActionBarActivity<GBActionBar> {
     }
 
     public void updateAvatar() {
-        Intent intent = new Intent(Intent.ACTION_PICK);// 打开相册
+        Intent intent = new Intent(Intent.ACTION_PICK); // 打开相册
         intent.setDataAndType(MediaStore.Images.Media.INTERNAL_CONTENT_URI, "image/*");
         this.startActivityForResult(intent, 1);
     }

@@ -68,7 +68,8 @@ public class GameInfo implements Serializable {
 
     public boolean isdownload = false;
 
-
+    public boolean benefits;
+    public int benefits_rate;
 
     @Generated
     public GameInfo() {

@@ -27,6 +27,7 @@ import com.gamebox_idtkown.core.db.greendao.GameInfo;
 import com.gamebox_idtkown.core.listeners.Callback;
 import com.gamebox_idtkown.di.dagger2.components.DaggerEnginComponent;
 import com.gamebox_idtkown.domain.GameOpenServiceInfo;
+import com.gamebox_idtkown.domain.GoagalInfo;
 import com.gamebox_idtkown.domain.ResultInfo;
 import com.gamebox_idtkown.engin.GameInfoEngin;
 import com.gamebox_idtkown.engin.GameOpenServiceEngin;
@@ -113,6 +114,8 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
     @BindView(R.id.process)
     GBDownloadBtn processView;
 
+    @BindView(R.id.main_pay)
+    TextView tvMainPay;
 
     @BindView(R.id.section5)
     RelativeLayout rlSection5;
@@ -221,6 +224,9 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
         width = ScreenUtil.dip2px(this, 250);
 
         EventBus.getDefault().register(this);
+
+        StateUtil.setStorke(this, tvMainPay, 3);
+        StateUtil.setColor(tvMainPay);
 
         showInfo();
     }

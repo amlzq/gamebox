@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.gamebox_idtkown.GBApplication;
 import com.gamebox_idtkown.R;
 import com.gamebox_idtkown.constans.DescConstans;
 import com.gamebox_idtkown.constans.EventBusMessage;
@@ -46,6 +47,8 @@ public class ForgotActivity extends BaseActionBarActivity<GBActionBar> {
 
     @BindView(R.id.et_password)
     EditText etPassword;
+
+    public static LoginActivity loginActivity;
 
     @Override
     public int getLayoutID() {
@@ -193,8 +196,12 @@ public class ForgotActivity extends BaseActionBarActivity<GBActionBar> {
                                                         ToastUtil.toast2(getBaseContext(), getMessage(resultInfo.message,
                                                                 "修改成功"));
                                                         EventBus.getDefault().post(EventBusMessage.FINISH);
+                                                        GBApplication.login(ForgotActivity.this, phone, phone,
+                                                                password);
                                                         finish();
-
+                                                        if(loginActivity != null) {
+                                                            loginActivity.finish();
+                                                        }
                                                     } else {
                                                         ToastUtil.toast2(getBaseContext(), getMessage(resultInfo.message, "修改失败"));
                                                     }

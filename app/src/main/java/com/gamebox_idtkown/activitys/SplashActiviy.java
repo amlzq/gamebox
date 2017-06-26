@@ -21,6 +21,8 @@ import com.gamebox_idtkown.R;
 import com.gamebox_idtkown.core.GameBox;
 import com.gamebox_idtkown.core.db.greendao.GameInfo;
 import com.gamebox_idtkown.domain.GoagalInfo;
+import com.gamebox_idtkown.game.AccountInfoUtil;
+import com.gamebox_idtkown.game.UserInfo;
 import com.gamebox_idtkown.utils.CheckUtil;
 import com.gamebox_idtkown.utils.PingUtil;
 import com.gamebox_idtkown.utils.StateUtil;
@@ -29,6 +31,7 @@ import com.squareup.picasso.Picasso;
 import com.umeng.analytics.game.UMGameAgent;
 
 import java.io.IOException;
+import java.util.List;
 
 import cn.jpush.android.api.InstrumentedActivity;
 import cn.jpush.android.api.JPushInterface;
@@ -207,6 +210,12 @@ public class SplashActiviy extends InstrumentedActivity {
 
         if (GBApplication.isLogin()) {
             GBApplication.login(getBaseContext());
+        }else {
+            List<UserInfo> list = AccountInfoUtil.loadAllUserInfo(getBaseContext());
+            if(list != null && list.size() > 0){
+                UserInfo userInfo = list.get(0);
+                GBApplication.login(getBaseContext(), userInfo.mobile, userInfo.username, userInfo.password);
+            }
         }
         Intent intent = new Intent(getBaseContext(), MainActivity.class);
         if (jump != null && !jump.isEmpty()) {

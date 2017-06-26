@@ -1,9 +1,12 @@
 package com.gamebox_idtkown.utils;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.StateListDrawable;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.Window;
@@ -53,10 +56,31 @@ public class StateUtil {
     }
 
     public static void setStorke(Context context, View view, float n) {
+
         GradientDrawable drawable = new GradientDrawable();
         drawable.setStroke(ScreenUtil.dip2px(context, 1), GoagalInfo.getInItInfo().androidColor);
         drawable.setCornerRadius(ScreenUtil.dip2px(context, n));
-        view.setBackground(drawable);
+
+        GradientDrawable drawable2 = new GradientDrawable();
+        drawable2.setColor(GoagalInfo.getInItInfo().androidColor);
+        drawable2.setCornerRadius(ScreenUtil.dip2px(context, n));
+
+
+        StateListDrawable states = new StateListDrawable();
+        states.addState(new int[] {android.R.attr.state_pressed},
+                drawable2);
+        states.addState(new int[] {},
+                drawable);
+        view.setBackground(states);
+    }
+
+    public static void setColor(TextView view) {
+        int[] colors = new int[] { Color.parseColor("#ffffff"), GoagalInfo.getInItInfo().androidColor};
+        int[][] states = new int[2][];
+        states[0] = new int[] { android.R.attr.state_pressed };
+        states[1] = new int[] {};
+        ColorStateList colorList = new ColorStateList(states, colors);
+        view.setTextColor(colorList);
     }
 
     public static void setCursorDrawableColor(Context context, EditText editText, int color) {

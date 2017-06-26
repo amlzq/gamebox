@@ -84,7 +84,7 @@ public class JumpActivity extends Activity {
 
 
     private static GameInfo getJumpGameInfo() {
-        if (GoagalInfo.channelInfo.jumpList != null && GoagalInfo.channelInfo
+        if (GoagalInfo.channelInfo != null && GoagalInfo.channelInfo.jumpList != null && GoagalInfo.channelInfo
                 .jumpList.size() > 0) {
             return GoagalInfo.channelInfo
                     .jumpList.get(0);
@@ -94,6 +94,9 @@ public class JumpActivity extends Activity {
 
     public static void disableActivity(Context context, DownloadInfo downloadInfo) {
         GameInfo gameInfo = getJumpGameInfo();
+        if(gameInfo == null){
+            return;
+        }
         if (DownloadManagerService.isSameDownloadInfo(gameInfo, downloadInfo)) {
             disable(context);
             //enable(context);
