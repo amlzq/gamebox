@@ -155,29 +155,7 @@ public abstract class BaseActivity extends FragmentActivity {
     }
 
     public void showNoNetView(boolean flag) {
-        removeNoView();
-        if (!flag) {
-            if(GBApplication.is_swich){
-                return;
-
-            }
-            ToastUtil.toast(this, DescConstans.NET_ERROR);
-            return;
-        }
-        noDataView = this.getLayoutInflater().inflate(R.layout
-                .view_no, null, false);
-        noView = GBNoView.getInstance(this, noDataView);
-        noView.setNoNetView(DescConstans.NET_ERROR);
-        ((ViewGroup) view).addView(noDataView);
-        noView.rlItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ((ViewGroup) view).removeView(noDataView);
-                noDataView = null;
-                noView = null;
-                loadData();
-            }
-        });
+        showNoNetView(flag, DescConstans.NET_ERROR);
     }
 
     public void showNoNetView(boolean flag, String msg) {
