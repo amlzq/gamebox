@@ -47,6 +47,7 @@ public class SplashActiviy extends InstrumentedActivity {
     private ImageView lanuchImageView;
     private boolean isJump;
     private ImageView loading;
+    public boolean isToMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -166,7 +167,6 @@ public class SplashActiviy extends InstrumentedActivity {
                         , 4000);
 
 
-
             }
         }, new Runnable() {
             @Override
@@ -205,14 +205,17 @@ public class SplashActiviy extends InstrumentedActivity {
         goToMainActivity(null);
     }
 
-    private void goToMainActivity(String jump) {
+    private synchronized void goToMainActivity(String jump) {
+        if (isToMain) {
+            return;
+        }
         isJump = true;
-
+        isToMain = true;
         if (GBApplication.isLogin()) {
             GBApplication.login(getBaseContext());
-        }else {
+        } else {
             List<UserInfo> list = AccountInfoUtil.loadAllUserInfo(getBaseContext());
-            if(list != null && list.size() > 0){
+            if (list != null && list.size() > 0) {
                 UserInfo userInfo = list.get(0);
                 GBApplication.login(getBaseContext(), userInfo.mobile, userInfo.username, userInfo.password);
             }
@@ -238,7 +241,7 @@ public class SplashActiviy extends InstrumentedActivity {
                 .positiveColorRes(R.color.black)
                 .negativeColorRes(R.color.gray_light)
                 .positiveText("设置网络")
-                .negativeText("退出")
+                .negativeText("继续")
                 .onAny(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
@@ -247,14 +250,14 @@ public class SplashActiviy extends InstrumentedActivity {
                             dialog.dismiss();
                             return;
                         }
-                        System.exit(0);
+                        goToMainActivity();
                     }
                 }).build();
         dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
             @Override
             public void onCancel(DialogInterface dialog) {
                 dialog.dismiss();
-                System.exit(0);
+                goToMainActivity();
             }
         });
         dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
@@ -262,7 +265,7 @@ public class SplashActiviy extends InstrumentedActivity {
                                  int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
                     dialog.dismiss();
-                    System.exit(0);
+                    goToMainActivity();
                 }
                 return true;
             }

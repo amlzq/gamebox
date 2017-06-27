@@ -49,7 +49,7 @@ public class PayRecordAdpater extends GBBaseAdapter<PayRecordInfo> {
         holder.tvOrderNumber.setText(payRecordInfo.order_sn);
         holder.tvState.setText(payRecordInfo.status_msg);
         String title = "平台币";
-        if(payRecordInfo.desp != null && !payRecordInfo.desp.isEmpty()){
+        if (payRecordInfo.desp != null && !payRecordInfo.desp.isEmpty() && !payRecordInfo.desp.equals("充值")) {
             title = payRecordInfo.desp;
         }
         holder.tvOrderTitle.setText(title);

@@ -370,7 +370,7 @@ public class IndexFragment extends BaseGameListFragment<GameInfo, GBActionBar> {
 
             @Override
             public void onFailure(Response response) {
-
+                removeProcessView();
             }
         });
     }

@@ -14,6 +14,7 @@ public class CacheConfig {
     public static final String GAME_INFO_NEW = "new";
 
     public static final String GAME_INFO_RANK = "rank";
+    public static final String GAME_INFO_BEN = "ben";
 
     public static final String GAME_INFO_MYGAME = "mygame";
 

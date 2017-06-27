@@ -11,4 +11,5 @@ public class PayOptInfo {
     public float percent;
     public float discount;
     public boolean isSelected;
+    public float return_game_money;
 }

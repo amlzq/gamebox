@@ -24,7 +24,6 @@ import com.gamebox_idtkown.utils.ShareUtil;
 import com.gamebox_idtkown.utils.TaskUtil;
 import com.gamebox_idtkown.utils.ToastUtil;
 import com.gamebox_idtkown.views.adpaters.GBEarnPointAdapter;
-import com.gamebox_idtkown.views.widgets.GBActionBar;
 import com.gamebox_idtkown.views.widgets.GBActionBar5;
 
 import java.util.ArrayList;

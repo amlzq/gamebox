@@ -21,6 +21,8 @@ public class DescConstans {
 
     public static final String SERVICE_ERROR2   = "领取异常,服务配置错误";
 
+    public static final String SERVICE_ERROR3   = "签到异常,服务配置错误";
+
     public static final String REQUEST_SUCCESS = "";
     public static final String REQUEST_FAIL = "";
 

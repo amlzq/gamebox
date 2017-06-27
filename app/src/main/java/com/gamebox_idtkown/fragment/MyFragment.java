@@ -219,12 +219,12 @@ public class MyFragment extends BaseActionBarFragment<GBActionBar> {
                                         return;
                                     }
                                     if (resultInfo.code == 1) {
-                                        myPoint.tvOther.setText("已签到");
-                                        myPoint.tvOther.setClickable(false);
-                                        StateUtil.setDrawable(getContext(), myPoint.tvOther, 3, Color.GRAY);
-                                        GBApplication.userInfo.setCheckTime(getTimeStr());
                                         try {
                                             float point = Float.parseFloat(resultInfo.data);
+                                            myPoint.tvOther.setText("已签到");
+                                            myPoint.tvOther.setClickable(false);
+                                            StateUtil.setDrawable(getContext(), myPoint.tvOther, 3, Color.GRAY);
+                                            GBApplication.userInfo.setCheckTime(getTimeStr());
                                             GBApplication.userInfo.setPoint((Float.parseFloat(GBApplication.userInfo
                                                     .getPoint()) + point) + "");
                                             DbUtil.getSession(getContext()).update(GBApplication.userInfo);
@@ -232,6 +232,8 @@ public class MyFragment extends BaseActionBarFragment<GBActionBar> {
                                         } catch (Exception e) {
                                             e.printStackTrace();
                                             LogUtil.msg("更新签到->" + e.getMessage());
+                                            ToastUtil.toast2(getContext(), getMessage("",
+                                                    DescConstans.SERVICE_ERROR3));
                                         }
                                     } else {
                                         ToastUtil.toast2(getContext(), getMessage(resultInfo.message, "签到失败,请重试"));
@@ -330,7 +332,7 @@ public class MyFragment extends BaseActionBarFragment<GBActionBar> {
             String nickname = CheckUtil.checkStr(GBApplication.userInfo.getNick_name(), GBApplication.userInfo.getName());
             tvNickName.setText(CheckUtil.checkStr(nickname, DescConstans.NICKNAME));
             myPoint.setNumber(GBApplication.userInfo.getPoint() + "");
-            puBalance.setNumber(GBApplication.userInfo.getMoney() + "");
+            puBalance.setNumber((int)Float.parseFloat(GBApplication.userInfo.getMoney()) + "");
             if (GBApplication.userInfo.getAvatar() != null && !GBApplication.userInfo.getAvatar().isEmpty()) {
                 Picasso.with(getContext())
                         .load(GBApplication.userInfo.getAvatar()).placeholder(R.mipmap.avatar_default).transform(new

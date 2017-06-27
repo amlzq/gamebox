@@ -17,9 +17,12 @@ public class OrderPayMoneyEngin extends BaseEngin {
         return Config.GetOrderPayMoney_URL;
     }
 
-    public void getOrderPayMoney(String paymoney, Callback callback){
+    public void getOrderPayMoney(String gameid, String paymoney, Callback<String> callback){
         Map<String, String> params = new HashMap<>();
         params.put("order_money", paymoney);
+        if(gameid != null && !gameid.isEmpty()) {
+            params.put("game_id", gameid);
+        }
         agetResultInfo(true, String.class, params, callback);
     }
 }

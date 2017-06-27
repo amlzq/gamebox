@@ -177,4 +177,7 @@ public class Config {
     //用户积分记录
     public static final String POINT_URL = getBaseUrl() + "/pointLog";
 
+    //返利游戏
+    public static final String BEN_URL = getBaseUrl() + "/benefitsGame";
+
 }

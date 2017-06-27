@@ -99,6 +99,9 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
     @BindView(R.id.has_gift)
     TextView tvGift;
 
+    @BindView(R.id.has_ben)
+    TextView tvBen;
+
     @BindView(R.id.desc)
     TextView tvDesc;
 
@@ -228,12 +231,31 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
         StateUtil.setStorke(this, tvMainPay, 3);
         StateUtil.setColor(tvMainPay);
 
+        tvMainPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(startLoginActivity()) {
+                    Intent intent = new Intent(GameDetailActivity.this, PayActivity.class);
+                    intent.putExtra("game_info", gameInfo);
+                    startActivity(intent);
+                }
+            }
+        });
+
         showInfo();
     }
 
     private void showInfo() {
         if (gameInfo == null || gameInfo.getUrl() == null || gameInfo.getUrl().isEmpty()) {
             return;
+        }
+
+        if(gameInfo.benefits){
+            tvBen.setText("返利" + gameInfo.benefits_rate + "%");
+            StateUtil.setDrawable(this, tvBen, 1.5f, Color.parseColor("#ad55ff"));
+            tvBen.setVisibility(View.VISIBLE);
+        }else {
+            tvBen.setVisibility(View.GONE);
         }
 
         actionBar.setOnShareClickLister(new GBActionBar.OnShareClickLister() {
@@ -253,9 +275,17 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
                             ToastUtil.toast2(GameDetailActivity.this, "复制成功");
                             return;
                         } else if (type == 1) {
-                            ShareUtil.openWXShareWithImage(GameDetailActivity.this, gameInfo.getName() + shareUrl, gameImages,
+                            if(shareUrl == null || shareUrl.isEmpty()){
+                                ToastUtil.toast2(GameDetailActivity.this, "分享信息有误");
+                                return;
+                            }
+                            ShareUtil.openWXShareWithImage(GameDetailActivity.this, shareUrl, gameImages,
                                     type);
                         } else {
+                            if(shareUrl == null || shareUrl.isEmpty()){
+                                ToastUtil.toast2(GameDetailActivity.this, "分享信息有误");
+                                return;
+                            }
                             ShareUtil.OpenWxShareText(GameDetailActivity.this, gameInfo.getName() + shareUrl);
                         }
                     }

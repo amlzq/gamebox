@@ -176,9 +176,21 @@ public class MyGameAdpater extends GBBaseAdapter<GameInfo> {
             holder.rl_process_wraper.setVisibility(View.GONE);
             holder.rl_size.setVisibility(View.GONE);
             holder.tvSize.setText("版本:" + gameInfo.getVersion());
-            holder.tvDesc.setText(Html.fromHtml("游戏币：<font androidColor=#FE6937>" + gameInfo.getMoney() + "</font>"));
+            holder.tvDesc.setText(Html.fromHtml("游戏币：<font androidColor=#FE6937>" + ((int)Float.parseFloat(gameInfo
+                    .getMoney())) +
+                    "</font>"));
 
         }
+
+        if(gameInfo.benefits){
+            holder.tvBenefits.setText("返利" + gameInfo.benefits_rate + "%");
+            holder.tvBenefits.setVisibility(View.VISIBLE);
+        }else {
+
+            holder.tvBenefits.setVisibility(View.GONE);
+        }
+
+
         Picasso.with(context).load(gameInfo.getIconUrl()).transform(new RoundedTransformation(rouned, 0)).placeholder(R.mipmap.icon_default).into(holder.ivIcon);
     }
 
@@ -209,6 +221,9 @@ public class MyGameAdpater extends GBBaseAdapter<GameInfo> {
 
         @BindView(R.id.type)
         TextView tvType;
+
+        @BindView(R.id.benefits)
+        TextView tvBenefits;
 
         @BindView(R.id.gift)
         TextView tvGift;
@@ -242,6 +257,7 @@ public class MyGameAdpater extends GBBaseAdapter<GameInfo> {
             ButterKnife.bind(this, view);
             StateUtil.setDrawable(context, tvGift, 1.5f, Color.parseColor("#ffc000"));
             StateUtil.setDrawable(context, tvType, 1.5f, Color.parseColor("#ff5555"));
+            StateUtil.setDrawable(context, tvBenefits, 1.5f, Color.parseColor("#ad55ff"));
             StateUtil.setDrawable(context, processView, 4);
             StateUtil.setRipple(rlItem);
         }

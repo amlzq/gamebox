@@ -231,7 +231,9 @@ public abstract class BaseGameListActivity<D, T extends GBBaseActionBar> extends
                     }
                 } else {
                     if (showStateView(resultInfo, adapter, page, limit)) {
-                        adapter.dataInfos.addAll(resultInfo.data);
+                        if(adapter.dataInfos != null) {
+                            adapter.dataInfos.addAll(resultInfo.data);
+                        }
                     }
                 }
                 adapter.notifyDataSetChanged();

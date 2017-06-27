@@ -156,7 +156,7 @@ public abstract class BaseActivity extends FragmentActivity {
 
     public void showNoNetView(boolean flag) {
         removeNoView();
-        if (!flag || !CheckUtil.isNetworkConnected(this)) {
+        if (!flag) {
             if(GBApplication.is_swich){
                 return;
 
@@ -203,6 +203,25 @@ public abstract class BaseActivity extends FragmentActivity {
                 noView = null;
             }
         });
+    }
+
+    public void showNoNetView(String msg) {
+        removeNoView();
+        noDataView = this.getLayoutInflater().inflate(R.layout
+                .view_no, null, false);
+        noView = GBNoView.getInstance(this, noDataView);
+        noView.setNoNetView(msg);
+        ((ViewGroup) view).addView(noDataView);
+        noView.rlItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ViewGroup) view).removeView(noDataView);
+                noDataView = null;
+                loadData();
+                noView = null;
+            }
+        });
+
     }
 
     public View view;

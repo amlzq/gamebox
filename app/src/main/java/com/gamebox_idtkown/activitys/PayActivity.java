@@ -5,14 +5,11 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
-import android.text.Editable;
 import android.text.Html;
-import android.text.TextWatcher;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -25,6 +22,7 @@ import com.gamebox_idtkown.R;
 import com.gamebox_idtkown.cache.PayTypeCache;
 import com.gamebox_idtkown.constans.DescConstans;
 import com.gamebox_idtkown.core.DbUtil;
+import com.gamebox_idtkown.core.db.greendao.GameInfo;
 import com.gamebox_idtkown.core.db.greendao.PayTypeInfo;
 import com.gamebox_idtkown.core.listeners.Callback;
 import com.gamebox_idtkown.domain.GoagalInfo;
@@ -59,8 +57,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.OnClick;
-import mirror.android.widget.Toast;
 
 /**
  * Created by zhangkai on 16/10/25.
@@ -70,10 +66,8 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
     TextView tvUsername;
 
     @BindView(R.id.tvmoney)
-    TextView tvMoney;
+    public TextView tvMoney;
 
-    @BindView(R.id.et_money)
-    EditText etMoney;
 
     @BindView(R.id.gridview)
     GridView gridView;
@@ -81,7 +75,16 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
     @BindView(R.id.listView)
     ListView listView;
 
-    private String money;
+    @BindView(R.id.explain_tv)
+    TextView tvExplain;
+
+    @BindView(R.id.tvben)
+    public TextView tvben;
+
+    @BindView(R.id.scrollView)
+    ScrollView scrollView;
+
+    public String money;
 
     PayOptEngin payOptEngin;
     PayOptAdpater payOptAdpater;
@@ -95,18 +98,20 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
 
     private PayWayAdapter adapter;
 
+    private GameInfo gameInfo;
 
     @Override
     public boolean isNeedLogin() {
         return true;
     }
 
+
     @Override
     public void initViews() {
         super.initViews();
         view.setBackgroundColor(Color.WHITE);
         setBackListener();
-        actionBar.setTitle("充值");
+        actionBar.setTitle("充值平台币");
         actionBar.showMenuItem("充值记录");
         actionBar.setOnItemClickListener(new GBActionBar5.OnItemClickListener() {
             @Override
@@ -125,24 +130,41 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
         payOptAdpater.setOnItemClickListener(new PayOptAdpater.OnItemClickListener() {
             @Override
             public void onClick(View view) {
+                StateUtil.hideSoftInput(PayActivity.this, view);
+                if (payOptAdpater.dataInfos != null) {
+                    for (PayOptInfo payOptInfo2 : payOptAdpater.dataInfos) {
+                        payOptInfo2.isSelected = false;
+                    }
+                }
+
                 PayOptInfo payOptInfo = (PayOptInfo) view.getTag();
                 payOptInfo.isSelected = true;
-                etMoney.setText(payOptInfo.real_money + "");
+
+                payOptAdpater.notifyDataSetChanged();
             }
         });
 
         adapter = new PayWayAdapter(this);
         listView.setAdapter(adapter);
 
+        String usernameHtml = "平台币余额:&nbsp;&nbsp;<font color=#ff6600>" + GBApplication.userInfo.getMoney() + "</font><br/><br/>充值帐号:&nbsp;&nbsp;";
         if (GBApplication.userInfo.getIs_vali_mobile()) {
             String phone = GBApplication.userInfo.getMobile();
             if (phone.length() >= 11) {
                 phone = phone.replace(phone.substring(3, 7), "****");
             }
-            tvUsername.setText(phone);
+            usernameHtml += "<font color=#ff6600>" + phone + "</font>";
         } else {
-            tvUsername.setText(GBApplication.userInfo.getName());
+            usernameHtml += "<font color=#ff6600>" + GBApplication.userInfo.getName() + "</font>";
         }
+
+
+        tvUsername.setText(Html.fromHtml(usernameHtml));
+        String html = "<font color=\"#8a8a8a\">1.充值金额≥30元才可享受充值福利。</font><br/>"
+                + "<font color=\"#8a8a8a\">2.只有带返利标签的游戏才可享受充值福利。</font><br/>"
+                + "<font color=\"#8a8a8a\">3.充值比例：1元=1平台币+1游戏币。</font><br/>"
+                + "<font color=\"#8a8a8a\">4.平台币、游戏币区别:平台币可用于平台所有游戏，游戏币用于单款指定游戏。</font><br/>";
+        tvExplain.setText(Html.fromHtml(html));
 
         adapter.setOnItemClickListener(new PayWayAdapter.OnItemClickListener() {
                                            @Override
@@ -151,11 +173,9 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                                                    ToastUtil.toast2(getBaseContext(), "输入的金额不正确或小于最小支付额度");
                                                    return;
                                                }
-                                               DecimalFormat decimalFormat = new DecimalFormat("0.00");
-                                               //构造方法的字符格式这里如果小数不足2位,会以0补足.
-                                               money = decimalFormat.format(Float.parseFloat(money));
-                                               tvMoney.setText(money);
-                                               etMoney.setText(money);
+
+                                               money = (int) (Float.parseFloat(money)) + "";
+                                               tvMoney.setText(money + "元");
                                                PayTypeInfo payTypeInfo = (PayTypeInfo) view.getTag();
 
                                                getPayMoney(payTypeInfo, money);
@@ -164,45 +184,6 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                                            }
                                        }
         );
-
-        etMoney.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!flag) {
-                    String tmpmoney = etMoney.getText().toString();
-                    try{
-                        Float.parseFloat(tmpmoney);
-                    }catch (Exception e){
-                        return;
-                    }
-                    money = tmpmoney;
-                    if (payOptAdpater.dataInfos != null) {
-                        for (PayOptInfo payOptInfo2 : payOptAdpater.dataInfos) {
-                            payOptInfo2.isSelected = false;
-                        }
-                        for (PayOptInfo payOptInfo2 : payOptAdpater.dataInfos) {
-                            if (payOptInfo2.real_money == Float.parseFloat(tmpmoney)) {
-                                payOptInfo2.isSelected = true;
-                                break;
-                            }
-                        }
-                        payOptAdpater.notifyDataSetChanged();
-                    }
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                flag = false;
-            }
-        });
-
-        setStorke(getBaseContext(), etMoney, Color.parseColor("#E9EAEB"));
 
 
     }
@@ -214,31 +195,40 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
             orderPayMoneyEngin = new OrderPayMoneyEngin();
         }
         LoadingUtil.show(this, "请稍后...");
-        orderPayMoneyEngin.getOrderPayMoney(money, new Callback() {
+        String gameid = "";
+        if (gameInfo != null) {
+            gameid = gameInfo.getGameId();
+        }
+        orderPayMoneyEngin.getOrderPayMoney(gameid, money, new Callback<String>() {
             @Override
-            public void onSuccess(final ResultInfo resultInfo) {
+            public void onSuccess(final ResultInfo<String> resultInfo) {
                 PayActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         LoadingUtil.dismiss();
-                        if(resultInfo == null || resultInfo.code != HttpConfig.STATUS_OK){
+                        if (resultInfo == null || resultInfo.code != HttpConfig.STATUS_OK) {
+                            ToastUtil.toast2(PayActivity.this, getMessage("", DescConstans
+                                    .SERVICE_ERROR));
+                            return;
+                        }
+
+                        float return_game_money = 0;
+                        try {
+                            return_game_money = Float.parseFloat(resultInfo.data + "");
+                        } catch (Exception e) {
                             ToastUtil.toast2(PayActivity.this, getMessage(resultInfo.message, DescConstans
                                     .SERVICE_ERROR));
                             return;
                         }
 
-                        try{
-                            Float.parseFloat(resultInfo.data+"");
-                        }catch (Exception e){
-                            ToastUtil.toast2(PayActivity.this, getMessage(resultInfo.message, DescConstans
-                                    .SERVICE_ERROR));
-                            return;
+                        String html = "获得<font color=#ff6600>" + money + "</font>平台币";
+                        if (return_game_money != 0) {
+                            html += "+<font color=#ff6600>" + (int) return_game_money + "</font>游戏币";
                         }
 
                         new MaterialDialog.Builder(PayActivity.this)
                                 .title("提示")
-                                .content(Html.fromHtml("确认支付：<font color=red>" + resultInfo.data +
-                                        "</font>元?<br/>实际到帐：<font color=red>" +
+                                .content(Html.fromHtml(html + "<br/>实付:<font color=red>" +
                                         money + "</font>元"))
                                 .positiveColor(GoagalInfo.getInItInfo().androidColor)
                                 .negativeColorRes(R.color.gray_light)
@@ -248,7 +238,6 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                                     @Override
                                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                                         if (which == DialogAction.POSITIVE) {
-                                            PayActivity.this.money = resultInfo.data+"";
                                             pay(payTypeInfo);
                                         }
                                     }
@@ -272,6 +261,18 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
 
     }
 
+    public void setMoney(final float pay_money) {
+        String html = "获得<font color=#ff6600>" + (int) pay_money + "</font>平台币";
+        if (gameInfo != null && gameInfo.benefits) {
+
+            String money = (int) (pay_money * gameInfo.benefits_rate / 100) + "";
+            html += "+<font color=#ff6600>" + money + "</font>游戏币";
+        }
+        money = (int) pay_money + "";
+        tvMoney.setText(pay_money + "元");
+        tvben.setText(Html.fromHtml(html));
+    }
+
 
     private IpaynowPlugin mIpaynowplugin;
 
@@ -283,12 +284,17 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
             mIpaynowplugin = IpaynowPlugin.getInstance().init(this);// 1.插件初始化
             mIpaynowplugin.unCkeckEnvironment();
         }
+
+        Intent intent = this.getIntent();
+        if (intent != null) {
+            gameInfo = (GameInfo) intent.getSerializableExtra("game_info");
+        }
     }
 
     private void pay(final PayTypeInfo payTypeInfo) {
 
         String md5signstr = "";
-        if (payTypeInfo!= null && payTypeInfo.getType() != null && !payTypeInfo.getType().equals("zfb")) {
+        if (payTypeInfo != null && payTypeInfo.getType() != null && !payTypeInfo.getType().equals("zfb")) {
             if (payTypeInfo.getType().equals("wxpay")) {
                 prePayMessage("13");
             } else {
@@ -487,6 +493,7 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
         return flag && Float.parseFloat(money) >= 0.0099f;
     }
 
+
     @Override
     public void loadData() {
         super.loadData();
@@ -535,8 +542,11 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                 });
             }
         });
-
-        payOptEngin.getPayOpt(new Callback<List<PayOptInfo>>() {
+        String gameid = "";
+        if (gameInfo != null) {
+            gameid = gameInfo.getGameId();
+        }
+        payOptEngin.getPayOpt(gameid, new Callback<List<PayOptInfo>>() {
             @Override
             public void onSuccess(final ResultInfo<List<PayOptInfo>> resultInfo) {
                 if (resultInfo != null && resultInfo.code == HttpConfig.STATUS_OK) {
@@ -546,13 +556,27 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                             payOptAdpater.dataInfos = resultInfo.data;
                             int n = 0;
                             if (resultInfo.data != null && resultInfo.data.size() > 0) {
+                                PayOptInfo payOptInfo = payOptAdpater.dataInfos.get(0);
+
+                                tvMoney.setText((int) payOptInfo.pay_money + "元");
+                                String html = "获得<font color=#ff6600>" + (int) payOptInfo.pay_money + "</font>平台币";
+                                if (payOptInfo.return_game_money != 0) {
+                                    html += "+<font color=#ff6600>" + (int) payOptInfo.return_game_money + "</font>游戏币";
+                                }
+                                tvben.setText(Html.fromHtml(html));
+                                money = (int) payOptInfo.pay_money + "";
+
                                 payOptAdpater.dataInfos.get(0).isSelected = true;
-                                etMoney.setText("" + payOptAdpater.dataInfos.get(0).real_money);
                                 n = resultInfo.data.size() / 3 + (resultInfo.data.size() % 3 > 0 ? 1 : 0);
                                 mPayOptInfo = payOptAdpater.dataInfos.get(0);
+                                gridView.getLayoutParams().height = ScreenUtil.dip2px(getBaseContext(), n * 50);
+                                payOptAdpater.notifyDataSetChanged();
+                                scrollView.setVisibility(View.VISIBLE);
+                            } else {
+                                showNoDataView();
+                                scrollView.setVisibility(View.GONE);
                             }
-                            gridView.getLayoutParams().height = ScreenUtil.dip2px(getBaseContext(), n * 60 + (n - 1) * 10);
-                            payOptAdpater.notifyDataSetChanged();
+
                         }
                     });
                 }
@@ -560,7 +584,13 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
 
             @Override
             public void onFailure(Response response) {
-
+                PayActivity.this.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        removeProcessView();
+                        scrollView.setVisibility(View.GONE);
+                        showNoNetView("网络连接异常，请稍后点击重试");
+                    }});
             }
         });
     }
@@ -570,9 +600,6 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
         drawable.setStroke(ScreenUtil.dip2px(context, 1), color);
         view.setBackground(drawable);
     }
-
-
-    private boolean flag = false;
 
 
     @Override

@@ -81,6 +81,22 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/font_stiny"
                     />
+
+                <com.gamebox_idtkown.views.widgets.GBGameTypeTextView
+                    android:id="@+id/benefits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_toRightOf="@+id/gift"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:text="返利"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_stiny"
+                    />
             </RelativeLayout>
 
             <RelativeLayout

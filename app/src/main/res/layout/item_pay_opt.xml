@@ -6,21 +6,47 @@
     <RelativeLayout
         android:id="@+id/item"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_weight="1"
         >
 
         <TextView
             android:id="@+id/money"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_normal"
-            android:gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:text=""
             android:textColor="@color/black"
             android:textSize="@dimen/font_normal"/>
+
+        <LinearLayout
+            android:id="@+id/rlzh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etzh"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:paddingLeft="10dp"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"
+                android:hint="输入金额"
+                android:background="#00000000"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="元"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_normal"/>
+        </LinearLayout>
 
         <TextView
             android:id="@+id/rmoney"
@@ -30,7 +56,8 @@
             android:gravity="center_horizontal"
             android:text=""
             android:textColor="@color/gray2"
-            android:textSize="@dimen/font_snormal"/>
+            android:textSize="@dimen/font_snormal"
+            android:visibility="gone"/>
     </RelativeLayout>
 
 </RelativeLayout>

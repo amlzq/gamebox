@@ -3,6 +3,7 @@ package com.gamebox_idtkown.views.adpaters;
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
+import android.text.Html;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -53,6 +54,7 @@ public class PayWayAdapter extends GBBaseAdapter<PayTypeInfo> {
         String type = "zfb";
         String name = payTypeInfo.getName();
         holder.rlItem.setTag(payTypeInfo);
+
         holder.tvTitle.setText(payTypeInfo.getName());
         if (name.contains("支付宝")) {
             type = "zfb";
@@ -61,6 +63,7 @@ public class PayWayAdapter extends GBBaseAdapter<PayTypeInfo> {
             if (!isinstall) {
                 holder.tvOther.setTextColor(Color.parseColor("#DC554C"));
             }
+            holder.tvTitle.setText(Html.fromHtml(payTypeInfo.getName()+"(<font color=#ff6600>推荐</font>)") );
             holder.ivIcon.setImageDrawable(ContextCompat.getDrawable(context, R.mipmap.alpay));
         } else if (name.contains("微信")) {
             type = "wxpay";

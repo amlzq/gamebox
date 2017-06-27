@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.gamebox_idtkown.GBApplication;
@@ -41,6 +43,9 @@ public class MainActivity extends BaseActivity implements GBTabBar.OnTabSelected
 
     @BindView(R.id.tabbar)
     GBTabBar tabBar;
+
+    @BindView(R.id.main_pay)
+    RelativeLayout rlMainPay;
 
     @Inject
     IndexFragment indexFragment;
@@ -155,6 +160,14 @@ public class MainActivity extends BaseActivity implements GBTabBar.OnTabSelected
                 startActivity(intent2);
             }
         }
+
+        rlMainPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BenActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
