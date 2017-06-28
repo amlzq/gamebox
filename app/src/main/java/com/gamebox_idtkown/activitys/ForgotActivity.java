@@ -192,6 +192,7 @@ public class ForgotActivity extends BaseActionBarActivity<GBActionBar> {
                                                     if (resultInfo.code == 1) {
                                                         GameBox2SDKUtil.UserInfo g2sUserInfo = GameBox2SDKUtil
                                                                 .exchangeUserInfo(phone, password, 0);
+                                                        GBApplication.updateGameUserInfo(getBaseContext());
                                                         GameBox2SDKUtil.insertUserInfo(getBaseContext(), g2sUserInfo);
                                                         ToastUtil.toast2(getBaseContext(), getMessage(resultInfo.message,
                                                                 "修改成功"));

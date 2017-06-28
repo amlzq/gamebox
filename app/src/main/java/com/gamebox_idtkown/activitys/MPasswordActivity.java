@@ -13,6 +13,8 @@ import com.gamebox_idtkown.domain.ResultInfo;
 import com.gamebox_idtkown.engin.CheckCodeEngin;
 import com.gamebox_idtkown.engin.MPasswordEngin;
 import com.gamebox_idtkown.engin.SendCodeEngin;
+import com.gamebox_idtkown.game.AccountInfoUtil;
+import com.gamebox_idtkown.game.UserInfo;
 import com.gamebox_idtkown.net.entry.Response;
 import com.gamebox_idtkown.utils.GameBox2SDKUtil;
 import com.gamebox_idtkown.utils.LoadingUtil;
@@ -185,6 +187,8 @@ public class MPasswordActivity extends BaseActionBarActivity<GBActionBar> {
                                                         GameBox2SDKUtil.UserInfo g2sUserInfo = GameBox2SDKUtil
                                                                 .exchangeUserInfo(GBApplication.userInfo, 0);
                                                         GameBox2SDKUtil.insertUserInfo(getBaseContext(), g2sUserInfo);
+
+                                                        GBApplication.updateGameUserInfo(getBaseContext());
                                                         finish();
                                                     } else {
                                                         ToastUtil.toast2(getBaseContext(), getMessage(resultInfo.message, "修改失败"));

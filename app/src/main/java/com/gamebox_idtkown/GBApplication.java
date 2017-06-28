@@ -17,6 +17,7 @@ import com.gamebox_idtkown.core.listeners.Callback;
 import com.gamebox_idtkown.domain.ResultInfo;
 import com.gamebox_idtkown.engin.InitEngin;
 import com.gamebox_idtkown.engin.LoginEngin;
+import com.gamebox_idtkown.game.AccountInfoUtil;
 import com.gamebox_idtkown.net.entry.Response;
 import com.gamebox_idtkown.services.DownloadManagerService;
 import com.gamebox_idtkown.utils.ApkStatusUtil;
@@ -266,6 +267,14 @@ public class GBApplication extends Application {
             });
 
         }
+    }
+
+    public static void updateGameUserInfo(Context context){
+        com.gamebox_idtkown.game.UserInfo userInfo = new com.gamebox_idtkown.game.UserInfo();
+        userInfo.username = GBApplication.userInfo.getName();
+        userInfo.mobile = GBApplication.userInfo.getMobile();
+        userInfo.password = GBApplication.userInfo.getPwd();
+        AccountInfoUtil.updateUsersInfo(context, userInfo);
     }
 
 }
