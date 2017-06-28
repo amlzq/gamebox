@@ -354,6 +354,7 @@ public class IndexFragment extends BaseGameListFragment<GameInfo, GBActionBar> {
                 bindView(new Runnable() {
                     @Override
                     public void run() {
+                        removeProcessView();
                         List<String> urls = new ArrayList<>();
                         if (resultInfo != null && resultInfo.data != null && resultInfo.data.size() > 0) {
                             for (SlideInfo slideInfo : resultInfo.data) {

@@ -214,7 +214,7 @@ public class SplashActiviy extends InstrumentedActivity {
         if (GBApplication.isLogin()) {
             GBApplication.login(getBaseContext());
         } else {
-            List<UserInfo> list = AccountInfoUtil.loadAllUserInfo(getBaseContext());
+            List<UserInfo> list = AccountInfoUtil.loadAllUserInfo(getBaseContext(), "accounts");
             if (list != null && list.size() > 0) {
                 UserInfo userInfo = list.get(0);
                 GBApplication.login(getBaseContext(), userInfo.mobile, userInfo.username, userInfo.password);

@@ -51,6 +51,7 @@ import com.gamebox_idtkown.views.widgets.GBDownloadBtn;
 import com.gamebox_idtkown.views.widgets.GBTabItem2;
 import com.gxz.library.StickyNavLayout;
 import com.squareup.picasso.Picasso;
+import com.umeng.analytics.MobclickAgent;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -234,10 +235,12 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
         tvMainPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(startLoginActivity()) {
+                MobclickAgent.onEvent(GameDetailActivity.this, "ben", "点击游戏详情页充值按钮");
+                if (startLoginActivity()) {
                     Intent intent = new Intent(GameDetailActivity.this, PayActivity.class);
                     intent.putExtra("game_info", gameInfo);
                     startActivity(intent);
+
                 }
             }
         });
@@ -250,11 +253,11 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
             return;
         }
 
-        if(gameInfo.benefits){
+        if (gameInfo.benefits) {
             tvBen.setText("返利" + gameInfo.benefits_rate + "%");
             StateUtil.setDrawable(this, tvBen, 1.5f, Color.parseColor("#ad55ff"));
             tvBen.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             tvBen.setVisibility(View.GONE);
         }
 
@@ -275,14 +278,14 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
                             ToastUtil.toast2(GameDetailActivity.this, "复制成功");
                             return;
                         } else if (type == 1) {
-                            if(shareUrl == null || shareUrl.isEmpty()){
+                            if (shareUrl == null || shareUrl.isEmpty()) {
                                 ToastUtil.toast2(GameDetailActivity.this, "分享信息有误");
                                 return;
                             }
                             ShareUtil.openWXShareWithImage(GameDetailActivity.this, shareUrl, gameImages,
                                     type);
                         } else {
-                            if(shareUrl == null || shareUrl.isEmpty()){
+                            if (shareUrl == null || shareUrl.isEmpty()) {
                                 ToastUtil.toast2(GameDetailActivity.this, "分享信息有误");
                                 return;
                             }
@@ -295,14 +298,13 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
         setInfo();
 
 
-
         if (gameInfo.isdownload && (gameInfo.status == ApkStatus.UNDOWNLOAD || gameInfo.status == ApkStatus.WAITING
                 || gameInfo.status == ApkStatus.WAIT_LISTENER)) {
             download();
         }
     }
 
-    private void initFragments(){
+    private void initFragments() {
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -422,7 +424,7 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
                     giftListFragment = new GiftListFragment();
                 }
 
-                if(tab1.getVisibility() == View.VISIBLE){
+                if (tab1.getVisibility() == View.VISIBLE) {
                     return giftListFragment;
                 }
 
@@ -431,7 +433,7 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
                     openServiceFragment.datainfos = datainfos;
                 }
 
-                if(tab2.getVisibility() == View.VISIBLE){
+                if (tab2.getVisibility() == View.VISIBLE) {
                     return openServiceFragment;
                 }
 
@@ -560,11 +562,10 @@ public class GameDetailActivity extends BaseActionBarActivity<GBActionBar> {
             tab1.cancel();
             tab2.cancel();
         } else if (idx == 1) {
-            if(tab1.getVisibility() == View.VISIBLE){
+            if (tab1.getVisibility() == View.VISIBLE) {
                 tab1.selected();
                 tab2.cancel();
-            }
-            else if(tab2.getVisibility() == View.VISIBLE){
+            } else if (tab2.getVisibility() == View.VISIBLE) {
                 tab2.selected();
             }
             tab0.cancel();

@@ -274,7 +274,8 @@ public class GBApplication extends Application {
         userInfo.username = GBApplication.userInfo.getName();
         userInfo.mobile = GBApplication.userInfo.getMobile();
         userInfo.password = GBApplication.userInfo.getPwd();
-        AccountInfoUtil.updateUsersInfo(context, userInfo);
+        AccountInfoUtil.updateUsersInfo(context, "accounts", userInfo);
+        AccountInfoUtil.updateUsersInfo(context, "mobiles", userInfo);
     }
 
 }

@@ -46,6 +46,7 @@ import com.gamebox_idtkown.views.adpaters.PayWayAdapter;
 import com.gamebox_idtkown.views.widgets.GBActionBar5;
 import com.ipaynow.plugin.api.IpaynowPlugin;
 import com.ipaynow.plugin.utils.PreSignMessageUtil;
+import com.umeng.analytics.MobclickAgent;
 
 import org.apache.commons.lang.math.NumberUtils;
 import org.greenrobot.eventbus.EventBus;
@@ -104,7 +105,6 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
     public boolean isNeedLogin() {
         return true;
     }
-
 
     @Override
     public void initViews() {
@@ -222,7 +222,7 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                         }
 
                         String html = "获得<font color=#ff6600>" + money + "</font>平台币";
-                        if (return_game_money != 0) {
+                        if (return_game_money != 0 && (int) Integer.parseInt(money) >= benefitsMoney) {
                             html += "+<font color=#ff6600>" + (int) return_game_money + "</font>游戏币";
                         }
 
@@ -261,10 +261,10 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
 
     }
 
+    public static final int benefitsMoney = 30;
     public void setMoney(final float pay_money) {
         String html = "获得<font color=#ff6600>" + (int) pay_money + "</font>平台币";
-        if (gameInfo != null && gameInfo.benefits) {
-
+        if (gameInfo != null && gameInfo.benefits && (int) pay_money >= benefitsMoney) {
             String money = (int) (pay_money * gameInfo.benefits_rate / 100) + "";
             html += "+<font color=#ff6600>" + money + "</font>游戏币";
         }
@@ -560,7 +560,7 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
 
                                 tvMoney.setText((int) payOptInfo.pay_money + "元");
                                 String html = "获得<font color=#ff6600>" + (int) payOptInfo.pay_money + "</font>平台币";
-                                if (payOptInfo.return_game_money != 0) {
+                                if (payOptInfo.return_game_money != 0 && (int) payOptInfo.pay_money >= benefitsMoney) {
                                     html += "+<font color=#ff6600>" + (int) payOptInfo.return_game_money + "</font>游戏币";
                                 }
                                 tvben.setText(Html.fromHtml(html));

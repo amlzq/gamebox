@@ -30,8 +30,8 @@ public class AccountInfoUtil {
     private static final String PATH = Environment.getExternalStorageDirectory() + "/6071GameBox2SDK";
 
 
-    public static void insertUserInfoFromPublic(Context context, UserInfo userInfo) {
-        List<UserInfo> userInfos = loadAllUserInfo(context);
+    public static void insertUserInfoFromPublic(Context context, String name,UserInfo userInfo) {
+        List<UserInfo> userInfos = loadAllUserInfo(context, name);
 
         boolean isSame = false;
         int len = 0;
@@ -54,11 +54,11 @@ public class AccountInfoUtil {
                 userInfos.add(0, userInfo);
             }
         }
-        saveUserInfos(context, userInfos);
+        saveUserInfos(context, name,userInfos);
     }
 
-    public static void insertUserInfo(Context context, UserInfo userInfo) {
-        List<UserInfo> userInfos = loadAllUserInfo(context);
+    public static void insertUserInfo(Context context, String name, UserInfo userInfo) {
+        List<UserInfo> userInfos = loadAllUserInfo(context, name);
         int len = userInfos.size();
         for (int i = 0; i < len; i++) {
             UserInfo _userInfo = userInfos.get(i);
@@ -72,17 +72,17 @@ public class AccountInfoUtil {
             userInfos.add(0, userInfo);
         }
 
-        saveUserInfos(context, userInfos);
+        saveUserInfos(context, name, userInfos);
     }
 
 
     //修改用户密码时，如果用户对应的手机号也登录过，则同时修改账号/手机号对应的密码
-    public static void updateUsersInfo(Context context, UserInfo userInfo) {
+    public static void updateUsersInfo(Context context, String name, UserInfo userInfo) {
         if (StringUtils.isEmpty(userInfo.username) && StringUtils.isEmpty(userInfo.mobile)) {
             return;
         }
 
-        List<UserInfo> userInfos = loadAllUserInfo(context);
+        List<UserInfo> userInfos = loadAllUserInfo(context, name);
 
         int len = userInfos.size();
         boolean isExistMobile = false;
@@ -90,7 +90,7 @@ public class AccountInfoUtil {
         for (int i = 0; i < len; i++) {
             UserInfo _userInfo = userInfos.get(i);
 
-            if (_userInfo.username.equals(userInfo.username + "") || (userInfo.username + "").equals(_userInfo
+            if (_userInfo.username.equals(userInfo.username + "") || (userInfo.mobile + "").equals(_userInfo
                     .mobile + "")) {
                 _userInfo.password = userInfo.password;
             }
@@ -108,12 +108,12 @@ public class AccountInfoUtil {
             userInfos.add(0, aUserInfo);
         }
 
-        saveUserInfos(context, userInfos);
+        saveUserInfos(context,name, userInfos);
     }
 
 
-    public static void deleteUserInfo(Context context, UserInfo userInfo) {
-        List<UserInfo> userInfos = loadAllUserInfo(context);
+    public static void deleteUserInfo(Context context, String name, UserInfo userInfo) {
+        List<UserInfo> userInfos = loadAllUserInfo(context, name);
         for (int i = 0; i < userInfos.size(); i++) {
             UserInfo _userInfo = userInfos.get(i);
             if (_userInfo.username.equals(userInfo.username)) {
@@ -121,14 +121,14 @@ public class AccountInfoUtil {
                 break;
             }
         }
-        saveUserInfos(context, userInfos);
+        saveUserInfos(context, name,  userInfos);
     }
 
-    public static List<UserInfo> loadAllUserInfo(Context context) {
+    public static List<UserInfo> loadAllUserInfo(Context context, String name) {
         List<UserInfo> userInfos = new ArrayList<UserInfo>();
         String userInfosStr = "";
         try {
-            File file = getUserInfosFile(context);
+            File file = getUserInfosFile(context, name);
             userInfosStr = new String(readFromFile(file));
         } catch (Exception e) {
         }
@@ -172,9 +172,9 @@ public class AccountInfoUtil {
         return userInfos;
     }
 
-    public static UserInfo getUserInfoByName(Context context, String userName) {
+    public static UserInfo getUserInfoByName(Context context, String name, String userName) {
         UserInfo userInfo = null;
-        List<UserInfo> userInfos = loadAllUserInfo(context);
+        List<UserInfo> userInfos = loadAllUserInfo(context, name);
         for (UserInfo uinfo : userInfos) {
             if (userName.equals(uinfo.username)) {
                 userInfo = uinfo;
@@ -184,7 +184,7 @@ public class AccountInfoUtil {
         return userInfo;
     }
 
-    public static void saveUserInfos(Context context, List<UserInfo> userInfos) {
+    public static void saveUserInfos(Context context, String name, List<UserInfo> userInfos) {
         String userInfosStr = "[";
         int len = userInfos.size();
         for (int i = 0; i < len; i++) {
@@ -197,15 +197,15 @@ public class AccountInfoUtil {
         }
         userInfosStr += "]";
         userInfosStr = Base64.encode(Encrypt.encode(userInfosStr).getBytes());
-        File file = getUserInfosFile(context);
+        File file = getUserInfosFile(context, name);
         try {
             writeToFile(file, userInfosStr.getBytes());
         } catch (Exception e) {
         }
     }
 
-    private static File getUserInfosFile(Context context) {
-        return new File(getFilePath(md5(getUid(context) + "accounts")));
+    private static File getUserInfosFile(Context context, String name) {
+        return new File(getFilePath(md5(getUid(context) + name)));
     }
 
     private static String getFilePath(String username) {

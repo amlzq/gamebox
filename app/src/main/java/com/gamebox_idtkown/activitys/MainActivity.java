@@ -28,6 +28,7 @@ import com.gamebox_idtkown.utils.LogUtil;
 import com.gamebox_idtkown.utils.PreferenceUtil;
 import com.gamebox_idtkown.utils.TaskUtil;
 import com.gamebox_idtkown.views.widgets.GBTabBar;
+import com.umeng.analytics.MobclickAgent;
 
 
 import org.greenrobot.eventbus.EventBus;
@@ -166,6 +167,7 @@ public class MainActivity extends BaseActivity implements GBTabBar.OnTabSelected
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, BenActivity.class);
                 startActivity(intent);
+                MobclickAgent.onEvent(MainActivity.this, "ben", "点击首页充值返利按钮");
             }
         });
 
