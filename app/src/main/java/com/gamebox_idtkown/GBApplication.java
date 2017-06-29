@@ -278,4 +278,12 @@ public class GBApplication extends Application {
         AccountInfoUtil.updateUsersInfo(context, "mobiles", userInfo);
     }
 
+    public static void insertGameUserInfo(Context context){
+        com.gamebox_idtkown.game.UserInfo userInfo = new com.gamebox_idtkown.game.UserInfo();
+        userInfo.username = GBApplication.userInfo.getName();
+        userInfo.mobile = GBApplication.userInfo.getMobile();
+        userInfo.password = GBApplication.userInfo.getPwd();
+        AccountInfoUtil.insertUserInfo(context, "accounts", userInfo);
+    }
+
 }

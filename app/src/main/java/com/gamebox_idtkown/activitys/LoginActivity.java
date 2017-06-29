@@ -197,6 +197,7 @@ public class LoginActivity extends BaseActionBarActivity<GBActionBar> {
                                 GBApplication.setUserInfo(
                                         getBaseContext());
                                 GBApplication.getUserBitmap(getBaseContext());
+                                GBApplication.insertGameUserInfo(getBaseContext());
                                 finish();
                                 return;
                             }
@@ -259,7 +260,7 @@ public class LoginActivity extends BaseActionBarActivity<GBActionBar> {
                                                         GBApplication.userInfo.setSex("0");
                                                         GBApplication.userInfo.setSigned(false);
                                                         GBApplication.setUserInfo(getBaseContext());
-
+                                                        GBApplication.insertGameUserInfo(getBaseContext());
                                                         GameBox2SDKUtil.UserInfo g2sUserInfo = GameBox2SDKUtil
                                                                 .exchangeUserInfo(GBApplication.userInfo, 0);
                                                         GameBox2SDKUtil.insertUserInfo(getBaseContext(), g2sUserInfo);
