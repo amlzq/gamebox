@@ -158,13 +158,8 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
             usernameHtml += "<font color=#ff6600>" + GBApplication.userInfo.getName() + "</font>";
         }
 
-
         tvUsername.setText(Html.fromHtml(usernameHtml));
-        String html = "<font color=\"#8a8a8a\">1.充值金额≥30元才可享受充值福利。</font><br/>"
-                + "<font color=\"#8a8a8a\">2.只有带返利标签的游戏才可享受充值福利。</font><br/>"
-                + "<font color=\"#8a8a8a\">3.充值比例：1元=1平台币+1游戏币。</font><br/>"
-                + "<font color=\"#8a8a8a\">4.平台币、游戏币区别:平台币可用于平台所有游戏，游戏币用于单款指定游戏。</font><br/>";
-        tvExplain.setText(Html.fromHtml(html));
+
 
         adapter.setOnItemClickListener(new PayWayAdapter.OnItemClickListener() {
                                            @Override
@@ -261,7 +256,7 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
 
     }
 
-    public static final int benefitsMoney = 30;
+    public static int benefitsMoney = 30;
     public void setMoney(final float pay_money) {
         String html = "获得<font color=#ff6600>" + (int) pay_money + "</font>平台币";
         if (gameInfo != null && gameInfo.benefits && (int) pay_money >= benefitsMoney) {
@@ -558,8 +553,17 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                             if (resultInfo.data != null && resultInfo.data.size() > 0) {
                                 PayOptInfo payOptInfo = payOptAdpater.dataInfos.get(0);
 
+                                benefitsMoney = (int)payOptInfo.return_range_money;
+
+
+                                String html = "<font color=\"#8a8a8a\">1.充值金额≥"+ benefitsMoney + "元才可享受充值福利。</font><br/>"
+                                        + "<font color=\"#8a8a8a\">2.只有带返利标签的游戏才可享受充值福利。</font><br/>"
+                                        + "<font color=\"#8a8a8a\">3.平台币、游戏币区别:平台币可用于平台所有游戏，游戏币用于单款指定游戏。</font><br/>";
+                                tvExplain.setText(Html.fromHtml(html));
+
                                 tvMoney.setText((int) payOptInfo.pay_money + "元");
-                                String html = "获得<font color=#ff6600>" + (int) payOptInfo.pay_money + "</font>平台币";
+
+                                html = "获得<font color=#ff6600>" + (int) payOptInfo.pay_money + "</font>平台币";
                                 if (payOptInfo.return_game_money != 0 && (int) payOptInfo.pay_money >= benefitsMoney) {
                                     html += "+<font color=#ff6600>" + (int) payOptInfo.return_game_money + "</font>游戏币";
                                 }

@@ -13,7 +13,7 @@ public class Config {
      */
     public static final String PATH = Environment.getExternalStorageDirectory() + "/" + GoagalInfo.TAG;
 
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
 
     private static String baseUrl = "http://api.box.6071.com/box";
     private static String debugBaseUrl = "http://sdk.289.com/Api/box";
