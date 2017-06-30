@@ -37,7 +37,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.io.File;
 import java.io.IOException;
-
+import java.util.List;
 
 
 /**
@@ -191,6 +191,13 @@ public class GBApplication extends Application {
 
 
     public static void login(final Context context) {
+        List<com.gamebox_idtkown.game.UserInfo> list = AccountInfoUtil.loadAllUserInfo(context, "accounts");
+        for (com.gamebox_idtkown.game.UserInfo _userInfo : list) {
+           if(_userInfo.username.equals(userInfo.getName())){
+               userInfo.setPwd(_userInfo.password);
+               break;
+           }
+        }
         login(context, userInfo.getMobile(), userInfo.getName(), userInfo.getPwd(), null, null);
     }
 

@@ -169,7 +169,7 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                                                    return;
                                                }
 
-                                               money = (int) (Float.parseFloat(money)) + "";
+                                               money = formatOne(Float.parseFloat(money)) + "";
                                                tvMoney.setText(money + "元");
                                                PayTypeInfo payTypeInfo = (PayTypeInfo) view.getTag();
 
@@ -217,8 +217,8 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                         }
 
                         String html = "获得<font color=#ff6600>" + money + "</font>平台币";
-                        if (return_game_money != 0 && (int) Integer.parseInt(money) >= benefitsMoney) {
-                            html += "+<font color=#ff6600>" + (int) return_game_money + "</font>游戏币";
+                        if (return_game_money != 0 && Float.parseFloat(money) >= benefitsMoney) {
+                            html += "+<font color=#ff6600>" + formatOne(return_game_money) + "</font>游戏币";
                         }
 
                         new MaterialDialog.Builder(PayActivity.this)
@@ -258,13 +258,13 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
 
     public static int benefitsMoney = 30;
     public void setMoney(final float pay_money) {
-        String html = "获得<font color=#ff6600>" + (int) pay_money + "</font>平台币";
-        if (gameInfo != null && gameInfo.benefits && (int) pay_money >= benefitsMoney) {
-            String money = (int) (pay_money * gameInfo.benefits_rate / 100) + "";
+        String html = "获得<font color=#ff6600>" + formatOne(pay_money) + "</font>平台币";
+        if (gameInfo != null && gameInfo.benefits && pay_money >= benefitsMoney) {
+            String money = formatOne(pay_money * gameInfo.benefits_rate / 100) + "";
             html += "+<font color=#ff6600>" + money + "</font>游戏币";
         }
-        money = (int) pay_money + "";
-        tvMoney.setText(pay_money + "元");
+        money = formatOne(pay_money) + "";
+        tvMoney.setText(money + "元");
         tvben.setText(Html.fromHtml(html));
     }
 
@@ -558,17 +558,21 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
 
                                 String html = "<font color=\"#8a8a8a\">1.充值金额≥"+ benefitsMoney + "元才可享受充值福利。</font><br/>"
                                         + "<font color=\"#8a8a8a\">2.只有带返利标签的游戏才可享受充值福利。</font><br/>"
-                                        + "<font color=\"#8a8a8a\">3.平台币、游戏币区别:平台币可用于平台所有游戏，游戏币用于单款指定游戏。</font><br/>";
+                                        + "<font color=\"#8a8a8a\">3.平台币、游戏币区别:平台币可用于平台所有游戏，游戏币用于单款指定游戏。</font><br/>"
+                                        + "<font color=\"#8a8a8a\">4.虚拟充值货币一律不退款。</font><br/>";
+
+
                                 tvExplain.setText(Html.fromHtml(html));
 
-                                tvMoney.setText((int) payOptInfo.pay_money + "元");
+                                tvMoney.setText(formatOne(payOptInfo.pay_money) + "元");
 
-                                html = "获得<font color=#ff6600>" + (int) payOptInfo.pay_money + "</font>平台币";
-                                if (payOptInfo.return_game_money != 0 && (int) payOptInfo.pay_money >= benefitsMoney) {
-                                    html += "+<font color=#ff6600>" + (int) payOptInfo.return_game_money + "</font>游戏币";
+                                html = "获得<font color=#ff6600>" + formatOne(payOptInfo.pay_money)  + "</font>平台币";
+                                if (payOptInfo.return_game_money != 0 && payOptInfo.pay_money >= benefitsMoney) {
+                                    html += "+<font color=#ff6600>" + formatOne(payOptInfo.return_game_money) +
+                                            "</font>游戏币";
                                 }
                                 tvben.setText(Html.fromHtml(html));
-                                money = (int) payOptInfo.pay_money + "";
+                                money = formatOne(payOptInfo.pay_money) + "";
 
                                 payOptAdpater.dataInfos.get(0).isSelected = true;
                                 n = resultInfo.data.size() / 3 + (resultInfo.data.size() % 3 > 0 ? 1 : 0);
@@ -605,6 +609,11 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
         view.setBackground(drawable);
     }
 
+
+    private String formatOne(float number) {
+        String result = new DecimalFormat("#.0").format(number);
+        return result;
+    }
 
     @Override
     protected void onActivityResult(int arg0, int arg1, Intent data) {

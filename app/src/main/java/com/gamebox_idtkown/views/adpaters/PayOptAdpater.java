@@ -20,6 +20,8 @@ import com.gamebox_idtkown.domain.PayOptInfo;
 import com.gamebox_idtkown.utils.ScreenUtil;
 import com.gamebox_idtkown.utils.StateUtil;
 
+import java.text.DecimalFormat;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,6 +40,10 @@ public class PayOptAdpater extends GBBaseAdapter<PayOptInfo> {
         super(context);
     }
 
+    private String formatOne(float number) {
+        String result = new DecimalFormat("#.0").format(number);
+        return result;
+    }
     @Override
     public View getView(int i, View convertView, ViewGroup viewGroup) {
         ViewHolder holder = null;
@@ -50,8 +56,8 @@ public class PayOptAdpater extends GBBaseAdapter<PayOptInfo> {
         }
         PayOptInfo payOptInfo = dataInfos.get(i);
         holder.rlItem.setTag(payOptInfo);
-        holder.tvMoney.setText((int)payOptInfo.pay_money + "元");
-        holder.tvRMoney.setText("实付" + payOptInfo.real_money + "元");
+        holder.tvMoney.setText(formatOne(payOptInfo.pay_money) + "元");
+        holder.tvRMoney.setText("实付" + formatOne(payOptInfo.real_money) + "元");
         if (payOptInfo.isSelected) {
             money = payOptInfo.pay_money;
             setStorke(context, holder.tvMoney, Color.parseColor(GoagalInfo.getInItInfo().themeColor));
@@ -68,7 +74,7 @@ public class PayOptAdpater extends GBBaseAdapter<PayOptInfo> {
             etzh = holder.etzh;
             final PayActivity payActivity = (PayActivity) context;
             if (!isEidt) {
-                etzh.setText((int)money + "");
+                etzh.setText(formatOne(money) + "");
             }
             isEidt = false;
             etzh.addTextChangedListener(new TextWatcher() {
