@@ -300,7 +300,11 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
         }
 
         LoadingUtil.show(this, "正在创建订单...");
-        PayEngin.getImpl(getBaseContext()).pay(payTypeInfo.getType(), money, md5signstr
+        String gameid = "";
+        if (gameInfo != null) {
+            gameid = gameInfo.getGameId();
+        }
+        PayEngin.getImpl(getBaseContext()).pay(gameid, payTypeInfo.getType(), money, md5signstr
                 ,
                 new Callback<HashMap>() {
                     @Override
@@ -559,7 +563,7 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
                                 String html = "<font color=\"#8a8a8a\">1.充值金额≥"+ benefitsMoney + "元才可享受充值福利。</font><br/>"
                                         + "<font color=\"#8a8a8a\">2.只有带返利标签的游戏才可享受充值福利。</font><br/>"
                                         + "<font color=\"#8a8a8a\">3.平台币、游戏币区别:平台币可用于平台所有游戏，游戏币用于单款指定游戏。</font><br/>"
-                                        + "<font color=\"#8a8a8a\">4.虚拟充值货币一律不退款。</font><br/>";
+                                        + "<font color=\"#8a8a8a\">4.虚拟充值货币概不退款。</font><br/>";
 
 
                                 tvExplain.setText(Html.fromHtml(html));
@@ -641,3 +645,5 @@ public class PayActivity extends BaseActionBarActivity<GBActionBar5> {
         EventBus.getDefault().post(GBApplication.userInfo);
     }
 }
+
+

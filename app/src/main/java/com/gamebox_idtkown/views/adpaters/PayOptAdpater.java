@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.text.Editable;
-import android.text.Html;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import com.gamebox_idtkown.activitys.PayActivity;
 import com.gamebox_idtkown.domain.GoagalInfo;
 import com.gamebox_idtkown.domain.PayOptInfo;
 import com.gamebox_idtkown.utils.ScreenUtil;
-import com.gamebox_idtkown.utils.StateUtil;
 
 import java.text.DecimalFormat;
 

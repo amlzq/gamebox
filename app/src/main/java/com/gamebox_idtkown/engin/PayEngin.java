@@ -27,7 +27,7 @@ public class PayEngin extends BaseEngin<HashMap> {
         return Config.ORDER_URL;
     }
 
-    public void pay(String type, String amount, String md5signstr, Callback<HashMap> callback){
+    public void pay(String gameid, String type, String amount, String md5signstr, Callback<HashMap> callback){
         Map<String, String> params = new HashMap<>();
         params.put("type", type);
         params.put("user_id", GBApplication.userInfo.getUserId());
@@ -37,6 +37,9 @@ public class PayEngin extends BaseEngin<HashMap> {
         if(!type.equals("zfb")){
             params.put("md5signstr", md5signstr);
             LogUtil.msg(md5signstr+"");
+        }
+        if(gameid != null && !gameid.isEmpty()) {
+            params.put("game_id", gameid);
         }
         agetResultInfo(true, HashMap.class, params, callback);
     }
