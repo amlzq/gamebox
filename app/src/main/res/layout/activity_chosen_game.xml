@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.gamebox_idtkown.views.widgets.GBActionBar
         android:id="@+id/actionbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"></com.gamebox_idtkown.views.widgets.GBActionBar>
+        android:layout_height="50dp" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refresh"

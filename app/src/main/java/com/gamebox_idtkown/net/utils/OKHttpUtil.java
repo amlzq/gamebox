@@ -2,11 +2,13 @@ package com.gamebox_idtkown.net.utils;
 
 import android.os.Build;
 
+import com.gamebox_idtkown.domain.GoagalInfo;
 import com.gamebox_idtkown.net.contains.HttpConfig;
 import com.gamebox_idtkown.net.entry.Response;
+import com.gamebox_idtkown.net.entry.UpFileInfo;
 import com.gamebox_idtkown.security.Encrypt;
 import com.gamebox_idtkown.utils.EncryptUtil;
-import com.gamebox_idtkown.net.entry.UpFileInfo;
+import com.gamebox_idtkown.utils.LogUtil;
 
 import org.json.JSONObject;
 
@@ -14,9 +16,6 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
-import com.gamebox_idtkown.domain.GoagalInfo;
-import com.gamebox_idtkown.utils.LogUtil;
 
 import okhttp3.FormBody;
 import okhttp3.MediaType;
@@ -145,8 +144,7 @@ public final class OKHttpUtil {
         LogUtil.msg("客户端请求数据->" + jsonStr);
         return EncryptUtil.compress(jsonStr);
     }
-
-
+    
     ///< 解密返回值
     public static String decodeBody(InputStream in) {
         return Encrypt.decode(EncryptUtil.unzip(in));
