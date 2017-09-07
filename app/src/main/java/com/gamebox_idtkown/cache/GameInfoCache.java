@@ -14,7 +14,7 @@ import java.util.List;
  * Created by zhangkai on 16/10/20.
  */
 public class GameInfoCache {
-    public static void setCache(Context context, List<GameInfo> dataInfos , String cacheType){
+    public static void setCache(Context context, List<GameInfo> dataInfos, String cacheType) {
         if (dataInfos != null) {
             GameInfoDao gameInfoDao = DbUtil.getSession(context).getGameInfoDao();
             QueryBuilder queryBuilder = gameInfoDao.queryBuilder();
@@ -28,7 +28,7 @@ public class GameInfoCache {
         }
     }
 
-    public static List<GameInfo> getCache(Context context, String cacheType){
+    public static List<GameInfo> getCache(Context context, String cacheType) {
         GameInfoDao gameInfoDao = DbUtil.getSession(context).getGameInfoDao();
         QueryBuilder queryBuilder = gameInfoDao.queryBuilder();
         queryBuilder.where(GameInfoDao.Properties.CacheType.eq(cacheType));

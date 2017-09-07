@@ -42,7 +42,6 @@ import com.liulishuo.filedownloader.FileDownloader;
 
 import org.greenrobot.eventbus.EventBus;
 
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -286,10 +285,10 @@ public class DownloadManagerService extends Service {
                                 }
                             }).build();
 
-                    if(Build.VERSION.SDK_INT > 18) {
+                    if (Build.VERSION.SDK_INT > 18) {
                         dialog.getWindow().setType(WindowManager.LayoutParams
                                 .TYPE_TOAST);
-                    }else {
+                    } else {
                         dialog.getWindow().setType(WindowManager.LayoutParams
                                 .TYPE_SYSTEM_ALERT);
                     }
@@ -372,7 +371,7 @@ public class DownloadManagerService extends Service {
     }
 
     public static void restartAllTask() {
-        if(downloadingInfoList != null) {
+        if (downloadingInfoList != null) {
             for (int i = 0; i < downloadingInfoList.size(); i++) {
                 DownloadInfo downloadInfo = downloadingInfoList.get(i);
                 if (downloadInfo.getStatus() == ApkStatus.Stop) {
@@ -380,7 +379,7 @@ public class DownloadManagerService extends Service {
                 }
             }
         }
-        if(updateList != null) {
+        if (updateList != null) {
             for (int i = 0; i < updateList.size(); i++) {
                 DownloadInfo downloadInfo = updateList.get(i);
                 if (downloadInfo.getStatus() == ApkStatus.Stop) {

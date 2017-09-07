@@ -1,130 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="com.gamebox_idtkown"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gamebox_idtkown">
 
     <!-- Optional. Required for location feature -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <permission
         android:name="com.gamebox_idtkown.permission.JPUSH_MESSAGE"
-        android:protectionLevel="signature"/>
+        android:protectionLevel="signature" />
 
     <!-- Required  一些系统要求的权限，如访问网络等-->
-    <uses-permission android:name="com.gamebox_xxrjy.permission.JPUSH_MESSAGE"/>
-    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
+    <uses-permission android:name="com.gamebox_xxrjy.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
 
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
 
-    <uses-permission android:name="android.webkit.permission.PLUGIN"/>
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.webkit.permission.PLUGIN" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <!-- 在SDCard中创建与删除文件权限 -->
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!--<uses-permission android:name="android.permission.INSTALL_LOCATION_PROVIDER"/>-->
     <!-- 照相的权限 -->
-    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera" />
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera.autofocus" />
 
     <!-- 读取短信验证码	可选 -->
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
 
     <!-- 录像需要的权限 -->
-    <uses-permission android:name="android.permission.RECORD_VIDEO"/>
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
-    <!--<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>-->
-    <!--<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>-->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
 
-    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
 
-    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.android.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher2.permission.WRITE_SETTINGS" />
 
-    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS" />
 
-    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="org.adw.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.qihoo360.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.lge.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="net.qihoo.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="net.qihoo.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="org.adwfreak.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="org.adw.launcher_donut.permission.READ_SETTINGS"/>
-    <uses-permission android:name="org.adw.launcher_donut.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.huawei.launcher3.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.fede.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.sec.android.app.twlauncher.settings.READ_SETTINGS"/>
-    <uses-permission android:name="com.sec.android.app.twlauncher.settings.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.anddoes.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.anddoes.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.tencent.qqlauncher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.tencent.qqlauncher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.huawei.launcher2.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.android.mylauncher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.ebproductions.android.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.ebproductions.android.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.miui.mihome2.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.miui.mihome2.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
-    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="telecom.mdesk.permission.READ_SETTINGS"/>
-    <uses-permission android:name="telecom.mdesk.permission.WRITE_SETTINGS"/>
-    <uses-permission android:name="dianxin.permission.ACCESS_LAUNCHER_DATA"/>
+    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="org.adw.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.qihoo360.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.lge.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="net.qihoo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="net.qihoo.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="org.adwfreak.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="org.adw.launcher_donut.permission.READ_SETTINGS" />
+    <uses-permission android:name="org.adw.launcher_donut.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.launcher3.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.fede.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.sec.android.app.twlauncher.settings.READ_SETTINGS" />
+    <uses-permission android:name="com.sec.android.app.twlauncher.settings.WRITE_SETTINGS" />
+    <uses-permission android:name="com.anddoes.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.anddoes.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.tencent.qqlauncher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.tencent.qqlauncher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.launcher2.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.mylauncher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.ebproductions.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.ebproductions.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.miui.mihome2.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.miui.mihome2.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="telecom.mdesk.permission.READ_SETTINGS" />
+    <uses-permission android:name="telecom.mdesk.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="dianxin.permission.ACCESS_LAUNCHER_DATA" />
 
     <application
         android:name="com.gamebox_idtkown.GBApplication"
@@ -142,8 +121,8 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -161,33 +140,35 @@
             android:taskAffinity="va.task.loading"
             android:theme="@style/FreeInstallTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activitys.BenActivity"
-                  android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activitys.BenActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".activitys.IntegralDetailsActivity"
-                  android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activitys.IntegralDetailsActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activitys.GameOpenServiceActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activitys.GamePreOpenServiceActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activitys.LoadingActivity"
             android:excludeFromRecents="true"
             android:noHistory="true"
             android:taskAffinity="va.task.loading"
-            android:theme="@style/TransparentTheme"/>
+            android:theme="@style/TransparentTheme" />
 
         <activity
             android:name="com.gamebox_idtkown.activitys.FreeInstallActivity"
@@ -203,8 +184,8 @@
             android:taskAffinity="va.task.loading"
             android:theme="@style/FreeInstallTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -215,11 +196,11 @@
             android:label="@string/app_name"
             android:targetActivity="com.gamebox_xxrjy.activitys.JumpActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
@@ -227,161 +208,160 @@
             android:name="com.gamebox_idtkown.activitys.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait">
-            <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+            <action android:name="android.intent.action.CREATE_SHORTCUT" />
         </activity>
 
         <activity
             android:name="com.gamebox_idtkown.activitys.PayRecordActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait">
-            <action android:name="android.intent.action.CREATE_SHORTCUT"/>
+            <action android:name="android.intent.action.CREATE_SHORTCUT" />
         </activity>
 
         <activity
             android:name="com.gamebox_idtkown.activitys.GameDetailActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.GameCategoryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.GameCategoryDetailActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.NewGameActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.GameRankActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.EarnPointAcitivty"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.gamebox_idtkown.activitys.DownloadActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.SearchActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.Search2Activity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.GameDetailGalleryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme3"></activity>
+            android:theme="@style/AppTheme3" />
         <activity
             android:name="com.gamebox_idtkown.activitys.ChosenGamesActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.GiftListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.GameWebActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.GiftDetailActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme4"></activity>
+            android:theme="@style/AppTheme4" />
 
         <service
             android:name="com.gamebox_idtkown.services.DownloadManagerService"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></service>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.gamebox_idtkown.activitys.UserInfoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.LoginActivity"
             android:configChanges="keyboard"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"
-            ></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.gamebox_idtkown.activitys.MyGameActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.MyGiftActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.PayActivity"
             android:configChanges="keyboard"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.gamebox_idtkown.activitys.SettingActivity"
             android:configChanges="keyboard"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.gamebox_idtkown.activitys.ForgotActivity"
             android:configChanges="keyboard"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
 
         <activity
             android:name="com.gamebox_idtkown.activitys.MUserInfoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.MPasswordActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.BindPhone2Activity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.BindPhoneActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.gamebox_idtkown.activitys.MSexActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.gamebox_idtkown.activitys.GoodTypeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.gamebox_idtkown.activitys.GoodListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.gamebox_idtkown.activitys.GoodChangeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <activity
             android:name="com.gamebox_idtkown.activitys.SDKBridgerActivity"
             android:theme="@style/AppTheme5">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="gamebox"/>
+                <data android:scheme="gamebox" />
             </intent-filter>
         </activity>
 
@@ -390,20 +370,19 @@
             android:label="游戏助手智能安装"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
-                <action android:name="android.accessibilityservice.AccessibilityService"/>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
 
             <meta-data
                 android:name="android.accessibilityservice"
-                android:resource="@xml/accessibility_service_config"/>
+                android:resource="@xml/accessibility_service_config" />
         </service>
 
         <activity
             android:name="com.alipay.sdk.auth.AuthActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind">
-        </activity>
+            android:screenOrientation="behind" />
 
         <!-- alipay sdk begin -->
         <activity
@@ -411,8 +390,7 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden">
-        </activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
 
         <activity
             android:name="com.ipaynow.plugin.inner_plugin.wechatwp.activity.WeChatNotifyActivity"
@@ -420,7 +398,7 @@
             android:exported="false"
             android:launchMode="singleTop"
             android:screenOrientation="behind"
-            android:theme="@android:style/Theme.Dialog"/>
+            android:theme="@android:style/Theme.Dialog" />
 
         <!-- 现在支付 -->
         <activity
@@ -428,39 +406,37 @@
             android:configChanges="keyboardHidden|navigation|orientation|screenSize"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Dialog">
-        </activity>
+            android:theme="@android:style/Theme.Dialog" />
 
         <receiver android:name="com.gamebox_idtkown.receivers.PackageReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED"/>
-                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
-                <action android:name="PluginManager.ACTION_PACKAGE_ADDED"/>
-                <action android:name="PluginManager.ACTION_PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="PluginManager.ACTION_PACKAGE_ADDED" />
+                <action android:name="PluginManager.ACTION_PACKAGE_REMOVED" />
 
-                <data android:scheme="package"/>
+                <data android:scheme="package" />
             </intent-filter>
         </receiver>
 
         <receiver android:name="com.gamebox_idtkown.receivers.NetChangeReceiver">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="57fee1ed67e58e6f0a001785"></meta-data>
+            android:value="57fee1ed67e58e6f0a001785" />
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="@string/app_name"/>
+            android:value="@string/app_name" />
 
         <!-- Rich push 核心功能 since 2.0.6-->
         <activity
             android:name="cn.jpush.android.ui.PopWinActivity"
             android:exported="false"
-            android:theme="@style/MyDialogStyle">
-        </activity>
+            android:theme="@style/MyDialogStyle" />
 
         <!-- Required SDK核心功能-->
         <activity
@@ -469,18 +445,17 @@
             android:exported="false"
             android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
-                <action android:name="cn.jpush.android.ui.PushActivity"/>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="com.gamebox_xxrjy"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.gamebox_xxrjy" />
             </intent-filter>
         </activity>
         <!-- Required  SDK核心功能-->
         <service
             android:name="cn.jpush.android.service.DownloadService"
             android:enabled="true"
-            android:exported="false">
-        </service>
+            android:exported="false" />
 
 
         <!-- Required SDK 核心功能-->
@@ -490,10 +465,10 @@
             android:enabled="true"
             android:exported="false">
             <intent-filter>
-                <action android:name="cn.jpush.android.intent.REGISTER"/>
-                <action android:name="cn.jpush.android.intent.REPORT"/>
-                <action android:name="cn.jpush.android.intent.PushService"/>
-                <action android:name="cn.jpush.android.intent.PUSH_TIME"/>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
             </intent-filter>
         </service>
 
@@ -504,8 +479,8 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="cn.jpush.android.intent.DaemonService"/>
-                <category android:name="com.gamebox_xxrjy"/>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="com.gamebox_xxrjy" />
             </intent-filter>
 
         </service>
@@ -516,29 +491,29 @@
             android:enabled="true"
             android:exported="false">
             <intent-filter android:priority="1000">
-                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY"/>
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />
                 <!--Required  显示通知栏 -->
-                <category android:name="com.gamebox_xxrjy"/>
+                <category android:name="com.gamebox_xxrjy" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.USER_PRESENT"/>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 
         <!-- Required SDK核心功能-->
         <receiver
             android:name="cn.jpush.android.service.AlarmReceiver"
-            android:exported="false"/>
+            android:exported="false" />
 
 
         <!--&lt;!&ndash; Required  . Enable it you can get statistics data with channel &ndash;&gt;-->
         <!--<meta-data-->
-            <!--android:name="JPUSH_CHANNEL"-->
-            <!--android:value="test"/>-->
+        <!--android:name="JPUSH_CHANNEL"-->
+        <!--android:value="test"/>-->
         <!--<meta-data-->
-            <!--android:name="JPUSH_APPKEY"-->
-            <!--android:value="53d3451f4f529d91d951fd91"/>-->
+        <!--android:name="JPUSH_APPKEY"-->
+        <!--android:value="53d3451f4f529d91d951fd91"/>-->
         <!--&lt;!&ndash;  </>值来自开发者平台取得的AppKey&ndash;&gt;-->
 
     </application>

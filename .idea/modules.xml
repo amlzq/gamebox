@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GameBox.iml" filepath="$PROJECT_DIR$/GameBox.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/gamebox_mzpbvsig.iml" filepath="$PROJECT_DIR$/gamebox_mzpbvsig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gamebox_amlzq.iml" filepath="$PROJECT_DIR$/gamebox_amlzq.iml" />
       <module fileurl="file://$PROJECT_DIR$/vapp/vapp.iml" filepath="$PROJECT_DIR$/vapp/vapp.iml" />
     </modules>
   </component>
