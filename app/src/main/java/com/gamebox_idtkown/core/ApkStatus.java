@@ -20,6 +20,4 @@ public class ApkStatus {
 
     public final static  int WAIT_LISTENER = 8;        /** @serialField  The status of apk is waiting for  download*/
 
-
-
 }

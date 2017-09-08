@@ -31,6 +31,7 @@ import butterknife.OnClick;
  */
 
 public class GBHGameListAdapter extends GBBaseAdapter<GameInfo> {
+
     private ListView listView;
     private int width;
 
@@ -146,24 +147,24 @@ public class GBHGameListAdapter extends GBBaseAdapter<GameInfo> {
 
         holder.rlItem.setTag(gameInfo);
         holder.btnDownload.setTag(gameInfo);
-        if(gameInfo.getCateName().isEmpty()){
+        if (gameInfo.getCateName().isEmpty()) {
             holder.tvType.setVisibility(View.GONE);
-        }else {
+        } else {
             holder.tvType.setVisibility(View.VISIBLE);
             holder.tvType.setText(gameInfo.getCateName());
         }
         holder.tvTitle.setText(gameInfo.getName());
 
         if (gameInfo.getHasGift() > 0) {
-                holder.tvGift.setVisibility(View.VISIBLE);
+            holder.tvGift.setVisibility(View.VISIBLE);
         } else {
-                holder.tvGift.setVisibility(View.GONE);
+            holder.tvGift.setVisibility(View.GONE);
         }
 
-        if(gameInfo.benefits){
+        if (gameInfo.benefits) {
             holder.tvBenefits.setText("返利" + gameInfo.benefits_rate + "%");
             holder.tvBenefits.setVisibility(View.VISIBLE);
-        }else {
+        } else {
 
             holder.tvBenefits.setVisibility(View.GONE);
         }
@@ -179,7 +180,7 @@ public class GBHGameListAdapter extends GBBaseAdapter<GameInfo> {
 
             holder.tvSize2.setText(CheckUtil.checkStr(downloadInfo.size, "0M/0M"));
             holder.tvSpeed.setText(CheckUtil.checkStr(downloadInfo.speed, "等待中"));
-            if(downloadInfo.precent == null){
+            if (downloadInfo.precent == null) {
                 downloadInfo.precent = 0.0f;
             }
             setProcess(holder.processView, downloadInfo.precent);
@@ -197,13 +198,14 @@ public class GBHGameListAdapter extends GBBaseAdapter<GameInfo> {
 
     private void setProcess(View processView, float precent) {
         try {
-            if(precent < 0.01){
+            if (precent < 0.01) {
                 return;
             }
             FrameLayout.LayoutParams l = (FrameLayout.LayoutParams) processView.getLayoutParams();
             l.width = (int) (width * precent);
             processView.setLayoutParams(l);
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
     }
 
     class ViewHolder {
@@ -283,6 +285,7 @@ public class GBHGameListAdapter extends GBBaseAdapter<GameInfo> {
 
     public interface OnItemClickListener {
         void onDetail(View view);
+
         void onDownload(TextView view);
     }
 }

@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <sys/mman.h>
+#include <string.h>
 
 #define T$Label(l, r) \
 	(((r) - (l)) * 2 - 4 + ((l) % 2 == 0 ? 0 : 2))

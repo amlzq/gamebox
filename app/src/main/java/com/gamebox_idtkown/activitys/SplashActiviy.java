@@ -287,7 +287,6 @@ public class SplashActiviy extends InstrumentedActivity {
         // //集成基本统计分析, 结束 Session
         UMGameAgent.onPause(this);
         JPushInterface.onPause(this);
-
     }
 
     @Override

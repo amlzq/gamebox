@@ -17,5 +17,4 @@ public class EventBusMessage {
     public static final int REFRESH_INFO = 0x10;
 
 
-
 }

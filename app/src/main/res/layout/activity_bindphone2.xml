@@ -6,7 +6,7 @@
     <com.gamebox_idtkown.views.widgets.GBActionBar
         android:id="@+id/actionbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp" </com.gamebox_idtkown.views.widgets.GBActionBar>
+        android:layout_height="50dp" />
 
     <com.gamebox_idtkown.views.widgets.GBScrollView
         android:layout_width="match_parent"
@@ -128,7 +128,6 @@
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="@dimen/font_normal" />
-
 
             </RelativeLayout>
 

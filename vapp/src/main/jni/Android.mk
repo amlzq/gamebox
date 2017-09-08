@@ -26,4 +26,4 @@ LOCAL_LDLIBS := -llog
 
 include $(BUILD_SHARED_LIBRARY)
 
-
+APP_PLATFORM := android-14

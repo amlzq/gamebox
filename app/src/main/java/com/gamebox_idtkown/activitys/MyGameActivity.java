@@ -31,6 +31,7 @@ import butterknife.BindView;
  * Created by zhangkai on 16/9/30.
  */
 public class MyGameActivity extends BaseGameListActivity<GameInfo, GBActionBar> {
+
     @BindView(R.id.gamelist)
     ListView gamelist;
 
