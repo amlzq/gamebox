@@ -47,7 +47,6 @@ public class GBApplication extends Application {
     public static boolean is_swich = false;
 
 
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -97,7 +96,7 @@ public class GBApplication extends Application {
 
     }
 
-    private void fix_fuck_bug(){
+    private void fix_fuck_bug() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.FROYO) {
             System.setProperty("http.keepAlive", "false");
         }
@@ -142,7 +141,7 @@ public class GBApplication extends Application {
         }
     }
 
-    public static boolean  avatarLoaded = true;
+    public static boolean avatarLoaded = true;
 
     public static void getUserBitmap(final Context context) {
         TaskUtil.getImpl().runTask(new Runnable() {
@@ -193,10 +192,10 @@ public class GBApplication extends Application {
     public static void login(final Context context) {
         List<com.gamebox_idtkown.game.UserInfo> list = AccountInfoUtil.loadAllUserInfo(context, "accounts");
         for (com.gamebox_idtkown.game.UserInfo _userInfo : list) {
-           if(_userInfo.username.equals(userInfo.getName())){
-               userInfo.setPwd(_userInfo.password);
-               break;
-           }
+            if (_userInfo.username.equals(userInfo.getName())) {
+                userInfo.setPwd(_userInfo.password);
+                break;
+            }
         }
         login(context, userInfo.getMobile(), userInfo.getName(), userInfo.getPwd(), null, null);
     }
@@ -255,11 +254,11 @@ public class GBApplication extends Application {
         super.attachBaseContext(base);
         try {
             VirtualCore.get().startup(base);
+//            VirtualCore.getCore().startup(base);
         } catch (Throwable e) {
             e.printStackTrace();
         }
     }
-
 
     public static void reInit(final Context context) {
         String lastLogin = PreferenceUtil.getImpl(context).getString("lastLogin", "");
@@ -276,7 +275,7 @@ public class GBApplication extends Application {
         }
     }
 
-    public static void updateGameUserInfo(Context context){
+    public static void updateGameUserInfo(Context context) {
         com.gamebox_idtkown.game.UserInfo userInfo = new com.gamebox_idtkown.game.UserInfo();
         userInfo.username = GBApplication.userInfo.getName();
         userInfo.mobile = GBApplication.userInfo.getMobile();
@@ -285,7 +284,7 @@ public class GBApplication extends Application {
         AccountInfoUtil.updateUsersInfo(context, "mobiles", userInfo);
     }
 
-    public static void insertGameUserInfo(Context context){
+    public static void insertGameUserInfo(Context context) {
         com.gamebox_idtkown.game.UserInfo userInfo = new com.gamebox_idtkown.game.UserInfo();
         userInfo.username = GBApplication.userInfo.getName();
         userInfo.mobile = GBApplication.userInfo.getMobile();

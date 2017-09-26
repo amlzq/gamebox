@@ -76,12 +76,12 @@ dependencies {
     compile files('libs/ipaynow_view_v2.0.1.jar')
     compile files('libs/ipaynow_wechatwp_v2.0.0.jar')
     compile 'com.youth.banner:banner:1.4.8'
-    //最新版本
-    compile project(':vapp')
     compile 'org.jdeferred:jdeferred-android-aar:1.2.4'
     compile 'com.github.castorflex.smoothprogressbar:library:1.1.0'
     compile 'cn.qqtheme.framework:WheelPicker:+'
     compile files('libs/ipaynow_wechatpg_v1.0.4.jar')
+    //最新版本
+    compile project(':vapp')
 }
 
 //
