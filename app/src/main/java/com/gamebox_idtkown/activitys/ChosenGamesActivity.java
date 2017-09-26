@@ -102,6 +102,7 @@ public class ChosenGamesActivity extends BaseGameListActivity<GameInfo, GBAction
                 ApkStatusUtil.actionByStatus(getBaseContext(), gameInfo, view, new Runnable() {
                     @Override
                     public void run() {
+
                     }
                 });
             }

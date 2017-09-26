@@ -26,7 +26,6 @@ import com.gamebox_idtkown.utils.TaskUtil;
 import com.gamebox_idtkown.views.adpaters.GBChosenAdapter;
 import com.gamebox_idtkown.views.widgets.GBActionBar;
 
-
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
@@ -39,6 +38,7 @@ import butterknife.BindView;
 
 /**
  * Created by zhangkai on 16/9/22.
+ * 精选
  */
 public class ChosenFragment extends BaseGameListFragment<ChosenInfo, GBActionBar> {
 
@@ -168,7 +168,7 @@ public class ChosenFragment extends BaseGameListFragment<ChosenInfo, GBActionBar
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventInit2(Integer type) {
-        if (type == EventBusMessage.RE_INIT){
+        if (type == EventBusMessage.RE_INIT) {
             adapter.notifyDataSetChanged();
         }
     }

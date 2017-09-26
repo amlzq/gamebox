@@ -1,44 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activitys.MainActivity">
+
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/action_bar_height"></FrameLayout>
+        android:layout_marginBottom="@dimen/action_bar_height" />
+
     <com.gamebox_idtkown.views.widgets.GBTabBar
         android:id="@+id/tabbar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/action_bar_height"
-        android:layout_alignParentBottom="true"></com.gamebox_idtkown.views.widgets.GBTabBar>
-    
+        android:layout_alignParentBottom="true" />
+
     <RelativeLayout
         android:id="@+id/main_pay"
         android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:clickable="true"
-        >
+        android:clickable="true">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/main_pay"
             android:layout_marginBottom="15dp"
-           />
+            android:src="@mipmap/main_pay" />
+
         <TextView
+            style="@style/tab_item_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/tab_item_text"
-            android:text="充值返利"
-            android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
-            android:textSize="@dimen/font_tiny"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="3dp"
-            android:textColor="@color/gray2"/>
+            android:text="充值返利"
+            android:textColor="@color/gray2"
+            android:textSize="@dimen/font_tiny" />
     </RelativeLayout>
+
 </RelativeLayout>

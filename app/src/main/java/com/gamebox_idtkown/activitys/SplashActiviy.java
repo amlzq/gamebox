@@ -88,8 +88,6 @@ public class SplashActiviy extends InstrumentedActivity {
         });
 
         view.startAnimation(animation);
-
-
     }
 
     public void startGameDetailActivity(GameInfo gameInfo) {

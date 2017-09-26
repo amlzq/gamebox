@@ -63,6 +63,7 @@ public class GameRankActivity extends BaseGameListActivity<GameInfo, GBActionBar
                 ApkStatusUtil.actionByStatus(getBaseContext(), gameInfo, view, new Runnable() {
                     @Override
                     public void run() {
+
                     }
                 });
             }

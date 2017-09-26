@@ -184,7 +184,7 @@ public class GBDownloadAdapater extends GBBaseAdapter<DownloadInfo> implements S
 
     private void setProcess(View processView, float precent) {
         try {
-            if(precent < 0.01f){
+            if (precent < 0.01f) {
                 return;
             }
             FrameLayout.LayoutParams l = (FrameLayout.LayoutParams) processView.getLayoutParams();
@@ -224,9 +224,9 @@ public class GBDownloadAdapater extends GBBaseAdapter<DownloadInfo> implements S
     }
 
     class HeaderViewHolder {
+
         @BindView(R.id.icon)
         ImageView ivIcon;
-
         @BindView(R.id.title)
         TextView tvTitle;
 
@@ -234,6 +234,7 @@ public class GBDownloadAdapater extends GBBaseAdapter<DownloadInfo> implements S
             ButterKnife.bind(this, view);
             ivIcon.setBackgroundColor(GoagalInfo.getInItInfo().androidColor);
         }
+
     }
 
     class ViewHolder {

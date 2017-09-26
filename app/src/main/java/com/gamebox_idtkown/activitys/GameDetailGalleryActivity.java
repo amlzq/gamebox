@@ -7,11 +7,8 @@ import android.view.View;
 import com.gamebox_idtkown.R;
 import com.gamebox_idtkown.views.adpaters.GBGameDetailGalleryAdapter;
 
-
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
 import me.relex.circleindicator.CircleIndicator;
 
 /**
@@ -68,6 +65,5 @@ public class GameDetailGalleryActivity extends BaseActivity {
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         });
-
     }
 }

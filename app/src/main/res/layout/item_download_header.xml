@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/bg"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@color/bg">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,8 +15,7 @@
             android:layout_width="4dp"
             android:layout_height="15dp"
             android:layout_centerVertical="true"
-            android:background="@color/blue"
-            />
+            android:background="@color/blue" />
 
         <TextView
             android:id="@+id/title"
@@ -27,13 +25,13 @@
             android:layout_toRightOf="@+id/icon"
             android:gravity="center"
             android:textColor="@color/black"
-            android:textSize="@dimen/font_snormal"/>
+            android:textSize="@dimen/font_snormal" />
 
         <View
             android:id="@+id/line"
             android:layout_width="match_parent"
             android:layout_height="@dimen/line_hieght"
             android:layout_alignParentBottom="true"
-            android:background="@color/gray"></View>
+            android:background="@color/gray" />
     </RelativeLayout>
 </RelativeLayout>

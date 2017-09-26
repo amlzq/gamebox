@@ -166,7 +166,7 @@ public class JumpActivity extends Activity {
                     PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
 
         } catch (Exception e) {
-
         }
     }
+
 }

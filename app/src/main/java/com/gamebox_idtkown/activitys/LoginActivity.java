@@ -40,6 +40,7 @@ import butterknife.OnClick;
 
 /**
  * Created by zhangkai on 16/10/25.
+ *
  */
 public class LoginActivity extends BaseActionBarActivity<GBActionBar> {
 

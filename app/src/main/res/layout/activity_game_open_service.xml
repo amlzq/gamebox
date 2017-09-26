@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.gamebox_idtkown.views.widgets.GBActionBar2
         android:id="@+id/actionbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-    </com.gamebox_idtkown.views.widgets.GBActionBar2>
-
+        android:layout_height="50dp" />
 
     <RelativeLayout
         android:id="@+id/item"
         android:layout_width="match_parent"
         android:layout_height="@dimen/button_height_normal"
         android:layout_below="@id/actionbar"
-        android:background="@color/bg2"
-        >
+        android:background="@color/bg2">
 
         <TextView
             android:id="@+id/title"
@@ -28,8 +25,7 @@
             android:lines="1"
             android:text="游戏名称"
             android:textColor="@color/black"
-            android:textSize="@dimen/font_snormal"
-            />
+            android:textSize="@dimen/font_snormal" />
 
         <TextView
             android:id="@+id/title2"
@@ -39,7 +35,7 @@
             android:gravity="center"
             android:text="开服名称"
             android:textColor="@color/black"
-            android:textSize="@dimen/font_snormal"/>
+            android:textSize="@dimen/font_snormal" />
 
         <TextView
             android:id="@+id/time"
@@ -50,8 +46,7 @@
             android:maxLines="1"
             android:text="开服时间"
             android:textColor="@color/black"
-            android:textSize="@dimen/font_snormal"
-            />
+            android:textSize="@dimen/font_snormal" />
 
         <TextView
             android:id="@+id/download"
@@ -63,8 +58,7 @@
             android:maxLines="1"
             android:text="详情"
             android:textColor="@color/black"
-            android:textSize="@dimen/font_snormal"
-            />
+            android:textSize="@dimen/font_snormal" />
     </RelativeLayout>
 
     <ListView
@@ -73,6 +67,6 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/item"
         android:divider="@null"
-        android:scrollbars="none"
-        ></ListView>
+        android:scrollbars="none" />
+
 </RelativeLayout>

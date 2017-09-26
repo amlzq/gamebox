@@ -135,13 +135,10 @@ public class DownloadFragment extends BaseFragment {
     public void onEvent(DownloadInfo downloadInfo) {
         if (downloadInfo.status == ApkStatus.DOWNLOADED || downloadInfo.status == ApkStatus.INSTALLED) {
             downloadedAdapter.notifyDataSetChanged();
-
         } else {
             downloadedAdapter.updateView(downloadInfo);
         }
     }
-
-
 
     @Override
     public int getLayoutID() {

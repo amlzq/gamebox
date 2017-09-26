@@ -12,6 +12,7 @@ import java.util.List;
  * Created by zhangkai on 16/10/25.
  */
 public class UserInfoCache  {
+
     public static void setCache(Context context, UserInfo userInfo){
         if (userInfo != null) {
             UserInfoDao userInfoDao = DbUtil.getSession(context).getUserInfoDao();

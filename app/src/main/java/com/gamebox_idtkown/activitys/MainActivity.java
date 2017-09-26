@@ -12,7 +12,6 @@ import com.gamebox_idtkown.GBApplication;
 import com.gamebox_idtkown.R;
 import com.gamebox_idtkown.constans.EventBusMessage;
 import com.gamebox_idtkown.core.db.greendao.GameInfo;
-import com.gamebox_idtkown.di.dagger2.components.DaggerMainActivityComponent;
 import com.gamebox_idtkown.domain.GoagalInfo;
 import com.gamebox_idtkown.domain.InItInfo;
 import com.gamebox_idtkown.fragment.BaseFragment;
@@ -23,13 +22,10 @@ import com.gamebox_idtkown.fragment.MyFragment;
 import com.gamebox_idtkown.services.DownloadManagerService;
 import com.gamebox_idtkown.utils.ApkStatusUtil;
 import com.gamebox_idtkown.utils.DialogUpdateUtil;
-import com.gamebox_idtkown.utils.LoadingUtil;
 import com.gamebox_idtkown.utils.LogUtil;
 import com.gamebox_idtkown.utils.PreferenceUtil;
-import com.gamebox_idtkown.utils.TaskUtil;
 import com.gamebox_idtkown.views.widgets.GBTabBar;
 import com.umeng.analytics.MobclickAgent;
-
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -38,7 +34,6 @@ import org.greenrobot.eventbus.ThreadMode;
 import javax.inject.Inject;
 
 import butterknife.BindView;
-
 
 public class MainActivity extends BaseActivity implements GBTabBar.OnTabSelectedListener {
 
@@ -71,11 +66,9 @@ public class MainActivity extends BaseActivity implements GBTabBar.OnTabSelected
         super.initVars();
 
         mainActivity = this;
-        DaggerMainActivityComponent.create().inject(this);
+//        DaggerMainActivityComponent.create().inject(this);
         fragmentManager = getSupportFragmentManager();
         EventBus.getDefault().register(this);
-
-
     }
 
     private void preInstall() {
@@ -275,5 +268,3 @@ public class MainActivity extends BaseActivity implements GBTabBar.OnTabSelected
         GBApplication.is_swich = false;
     }
 }
-
-
