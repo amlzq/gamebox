@@ -118,7 +118,7 @@ public class ChosenFragment extends BaseGameListFragment<ChosenInfo, GBActionBar
                         if (resultInfo == null || resultInfo.data == null || resultInfo.data.size() == 0) {
                             showNoDataView();
                         } else {
-                            adapter.dataInfos = new ArrayList<GameInfo>();
+                            adapter.dataInfos = new ArrayList<>();
                             List<ChosenInfo> lists = resultInfo.data;
                             for (ChosenInfo chosenInfo : lists) {
                                 GameInfo gameInfo = new GameInfo();
