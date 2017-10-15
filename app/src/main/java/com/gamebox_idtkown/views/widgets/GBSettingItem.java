@@ -54,7 +54,6 @@ public class GBSettingItem extends BaseView {
         arrow.setVisibility(View.GONE);
     }
 
-
     public void showSwitch() {
         SpannableString ss = new SpannableString("");
         switchButton.setText(ss, "");
@@ -62,7 +61,6 @@ public class GBSettingItem extends BaseView {
         switchButton.setVisibility(View.VISIBLE);
         tvOther.setVisibility(View.GONE);
     }
-
 
     @Override
     public int getLayoutId() {

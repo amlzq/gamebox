@@ -13,6 +13,7 @@ import butterknife.ButterKnife;
  * Created by zhangkai on 16/9/14.
  */
 public abstract class BaseView extends RelativeLayout {
+
     public BaseView(Context context) {
         super(context);
     }
@@ -22,13 +23,13 @@ public abstract class BaseView extends RelativeLayout {
         initViews(context);
     }
 
-    public void initViews(Context context){
+    public void initViews(Context context) {
         try {
             inflate(context, getLayoutId(), this);
             ButterKnife.bind(this);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            LogUtil.msg("baseView初始化失败->"+e);
+            LogUtil.msg("baseView初始化失败->" + e);
         }
     }
 

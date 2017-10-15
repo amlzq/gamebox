@@ -113,7 +113,6 @@ public class GBChosenAdapter extends GBBaseAdapter<GameInfo> {
             }
         }
 
-
         int hcount = listView.getHeaderViewsCount();
         int fcount = listView.getFooterViewsCount();
         int fvisiblePos = listView.getFirstVisiblePosition() - hcount;

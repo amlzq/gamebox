@@ -72,12 +72,11 @@ public class SDKContentProvider extends ContentProvider {
                 bundle.putString("password", GBApplication.userInfo.getPwd());
                 bundle.putString("phone", GBApplication.userInfo.getMobile());
             }
-        }
-        else if (method.equals("search_channel")) {
+        } else if (method.equals("search_channel")) {
             bundle = new Bundle();
             String from_id = "0";
             GoagalInfo.setGoagalInfo(getContext(), PathUtil.getGolgalDir());
-            if(GoagalInfo.channelInfo != null){
+            if (GoagalInfo.channelInfo != null) {
                 from_id = GoagalInfo.channelInfo.from_id;
             }
             bundle.putString("channel", from_id);

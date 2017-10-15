@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/rlItem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp"
-        >
+        android:layout_marginTop="70dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,8 +18,7 @@
                 android:id="@+id/icon"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:layout_centerHorizontal="true"
-                />
+                android:layout_centerHorizontal="true" />
 
             <TextView
                 android:id="@+id/title"
@@ -31,10 +28,9 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:textColor="@color/gray_light"
-                android:textSize="@dimen/font_small"
                 android:paddingBottom="60dp"
-                />
+                android:textColor="@color/gray_light"
+                android:textSize="@dimen/font_small" />
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>
