@@ -49,7 +49,7 @@
             android:layout_below="@+id/sex"
             android:background="@drawable/btn_bg_selector"
             android:clickable="true"
-            gb:text="邮箱"></com.gamebox_idtkown.views.widgets.GBUserInfoItem>
+            gb:text="邮箱" />
 
         <com.gamebox_idtkown.views.widgets.GBUserInfoItem
             android:id="@+id/qq"
@@ -58,7 +58,7 @@
             android:layout_below="@+id/email"
             android:background="@drawable/btn_bg_selector"
             android:clickable="true"
-            gb:text="QQ"></com.gamebox_idtkown.views.widgets.GBUserInfoItem>
+            gb:text="QQ" />
 
         <com.gamebox_idtkown.views.widgets.GBUserInfoItem
             android:id="@+id/phone"
@@ -67,7 +67,7 @@
             android:layout_below="@+id/qq"
             android:background="@drawable/btn_bg_selector"
             android:clickable="true"
-            gb:text="绑定手机号"></com.gamebox_idtkown.views.widgets.GBUserInfoItem>
+            gb:text="绑定手机号" />
 
         <com.gamebox_idtkown.views.widgets.GBUserInfoItem
             android:id="@+id/password"
@@ -76,6 +76,7 @@
             android:layout_below="@+id/phone"
             android:background="@drawable/btn_bg_selector"
             android:clickable="true"
-            gb:text="修改密码"></com.gamebox_idtkown.views.widgets.GBUserInfoItem>
+            gb:text="修改密码" />
     </RelativeLayout>
+
 </RelativeLayout>
