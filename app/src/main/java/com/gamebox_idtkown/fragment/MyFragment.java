@@ -56,6 +56,7 @@ import butterknife.BindView;
  * Created by zhangkai on 16/9/22.
  */
 public class MyFragment extends BaseActionBarFragment<GBActionBar> {
+
     @BindView(R.id.scrollView)
     GBScrollView scrollView;
 

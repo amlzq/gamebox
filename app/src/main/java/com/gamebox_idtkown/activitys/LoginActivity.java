@@ -40,7 +40,6 @@ import butterknife.OnClick;
 
 /**
  * Created by zhangkai on 16/10/25.
- *
  */
 public class LoginActivity extends BaseActionBarActivity<GBActionBar> {
 
@@ -195,8 +194,7 @@ public class LoginActivity extends BaseActionBarActivity<GBActionBar> {
                                         "登录成功"));
                                 GBApplication.userInfo = resultInfo.data;
                                 GBApplication.reInit(LoginActivity.this);
-                                GBApplication.setUserInfo(
-                                        getBaseContext());
+                                GBApplication.setUserInfo(getBaseContext());
                                 GBApplication.getUserBitmap(getBaseContext());
                                 GBApplication.insertGameUserInfo(getBaseContext());
                                 finish();

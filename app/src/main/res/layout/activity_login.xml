@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.gamebox_idtkown.views.widgets.GBActionBar
         android:id="@+id/actionbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"></com.gamebox_idtkown.views.widgets.GBActionBar>
+        android:layout_height="50dp" />
 
     <com.gamebox_idtkown.views.widgets.GBScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/actionbar"
-        android:background="@color/white"
-        >
+        android:background="@color/white">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
             <FrameLayout
                 android:id="@+id/fl_banner"
@@ -30,13 +28,13 @@
                 <View
                     android:id="@+id/banner"
                     android:layout_width="match_parent"
-                    android:layout_height="185dp"></View>
+                    android:layout_height="185dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="190dp"
                     android:scaleType="fitXY"
-                    android:src="@mipmap/login_header"/>
+                    android:src="@mipmap/login_header" />
             </FrameLayout>
 
             <LinearLayout
@@ -61,8 +59,7 @@
                     android:text="帐号登录"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_normal"
-                    />
+                    android:textSize="@dimen/font_normal" />
 
                 <TextView
                     android:id="@+id/tab2"
@@ -75,7 +72,7 @@
                     android:text="帐号注册"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_normal"/>
+                    android:textSize="@dimen/font_normal" />
             </LinearLayout>
 
             <RelativeLayout
@@ -86,8 +83,7 @@
                 <RelativeLayout
                     android:id="@+id/rl_phone"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    >
+                    android:layout_height="60dp">
 
                     <TextView
                         android:id="@+id/tv_phone"
@@ -98,8 +94,7 @@
                         android:gravity="center_vertical"
                         android:text="手机号"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/font_big"
-                        />
+                        android:textSize="@dimen/font_big" />
 
                     <EditText
                         android:id="@+id/et_phone"
@@ -111,14 +106,13 @@
                         android:background="#00000000"
                         android:singleLine="true"
                         android:textColor="@color/gray_light"
-                        android:textSize="@dimen/font_normal"
-                        />
+                        android:textSize="@dimen/font_normal" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/line_hieght"
                         android:layout_alignParentBottom="true"
-                        android:background="@color/gray"></View>
+                        android:background="@color/gray" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -139,8 +133,7 @@
                         android:gravity="center_vertical"
                         android:text="验证码"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/font_big"
-                        />
+                        android:textSize="@dimen/font_big" />
 
                     <EditText
                         android:id="@+id/et_checkcode"
@@ -155,8 +148,7 @@
                         android:inputType="number"
                         android:singleLine="true"
                         android:textColor="@color/gray_light"
-                        android:textSize="@dimen/font_normal"
-                        />
+                        android:textSize="@dimen/font_normal" />
 
                     <TextView
                         android:id="@+id/sendcode"
@@ -169,13 +161,13 @@
                         android:text="发送验证码"
                         android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/font_small"/>
+                        android:textSize="@dimen/font_small" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/line_hieght"
                         android:layout_alignParentBottom="true"
-                        android:background="@color/gray"></View>
+                        android:background="@color/gray" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -195,8 +187,7 @@
                         android:gravity="center_vertical"
                         android:text="密码"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/font_big"
-                        />
+                        android:textSize="@dimen/font_big" />
 
                     <EditText
                         android:id="@+id/et_password"
@@ -210,14 +201,13 @@
                         android:inputType="textPassword"
                         android:singleLine="true"
                         android:textColor="@color/gray_light"
-                        android:textSize="@dimen/font_normal"
-                        />
+                        android:textSize="@dimen/font_normal" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/line_hieght"
                         android:layout_alignParentBottom="true"
-                        android:background="@color/gray"></View>
+                        android:background="@color/gray" />
                 </RelativeLayout>
 
 
@@ -233,7 +223,7 @@
                     android:text="立即登录"
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/font_normal"/>
+                    android:textSize="@dimen/font_normal" />
 
                 <TextView
                     android:id="@+id/forgot"
@@ -246,11 +236,9 @@
                     android:gravity="right"
                     android:text="忘记密码？"
                     android:textColor="@color/gray_light"
-                    android:textSize="@dimen/font_snormal"/>
+                    android:textSize="@dimen/font_snormal" />
             </RelativeLayout>
-
         </RelativeLayout>
     </com.gamebox_idtkown.views.widgets.GBScrollView>
-
 
 </RelativeLayout>

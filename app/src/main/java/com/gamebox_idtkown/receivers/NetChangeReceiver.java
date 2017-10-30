@@ -8,6 +8,7 @@ import android.content.Intent;
  * Created by zhangkai on 16/10/19.
  */
 public class NetChangeReceiver extends BroadcastReceiver {
+
     @Override
     public void onReceive(Context context, Intent intent) {
 //        if (context == null) return;
