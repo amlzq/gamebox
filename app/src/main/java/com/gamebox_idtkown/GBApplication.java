@@ -28,7 +28,6 @@ import com.gamebox_idtkown.utils.PathUtil;
 import com.gamebox_idtkown.utils.PreferenceUtil;
 import com.gamebox_idtkown.utils.ScreenUtil;
 import com.gamebox_idtkown.utils.TaskUtil;
-import com.lody.virtual.client.core.VirtualCore;
 import com.squareup.picasso.Picasso;
 import com.umeng.analytics.MobclickAgent;
 import com.umeng.analytics.game.UMGameAgent;
@@ -253,7 +252,8 @@ public class GBApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         try {
-            VirtualCore.get().startup(base);
+            // TODO: 2019/3/28 vappC++问题所以注释
+//            VirtualCore.get().startup(base);
 //            VirtualCore.getCore().startup(base);
         } catch (Throwable e) {
             e.printStackTrace();

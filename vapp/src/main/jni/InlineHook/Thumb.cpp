@@ -1,5 +1,6 @@
 #include "ARM.h"
 #include "Thumb.h"
+#include <string.h>
 
 static size_t Thumb::MSGetInstructionWidth(void *start) {
 	if ((reinterpret_cast<uintptr_t>(start) & 0x1) == 0)

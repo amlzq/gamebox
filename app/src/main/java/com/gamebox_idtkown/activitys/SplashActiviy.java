@@ -154,17 +154,13 @@ public class SplashActiviy extends InstrumentedActivity {
                 initCount.setText("");
                 tvJump.setTextColor(GoagalInfo.getInItInfo().androidColor);
                 lanuchImageView.postDelayed(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    if (!isJump) {
-                                                        goToMainActivity();
-                                                    }
-                                                }
-                                            }
-
-                        , 4000);
-
-
+                    @Override
+                    public void run() {
+                        if (!isJump) {
+                            goToMainActivity();
+                        }
+                    }
+                }, 4000);
             }
         }, new Runnable() {
             @Override

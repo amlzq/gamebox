@@ -1,1 +1,1 @@
-include ':app', ':vapp'
+include ':app'//, ':vapp'

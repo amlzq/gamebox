@@ -5,6 +5,7 @@
 #include <sys/mman.h>
 #include <Helper.h>
 #include "Log.h"
+#include <string.h>
 
 /* memory map for libraries */
 #define MAX_NAME_LEN 256

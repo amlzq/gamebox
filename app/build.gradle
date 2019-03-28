@@ -81,7 +81,7 @@ dependencies {
     compile 'cn.qqtheme.framework:WheelPicker:+'
     compile files('libs/ipaynow_wechatpg_v1.0.4.jar')
     //最新版本
-    compile project(':vapp')
+//    compile project(':vapp')
 }
 
 //
