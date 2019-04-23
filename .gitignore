@@ -13,3 +13,5 @@
 /.gradle
 /.idea
 /gradle
+/build
+/schemas

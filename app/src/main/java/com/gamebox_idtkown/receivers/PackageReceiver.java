@@ -46,10 +46,11 @@ public class PackageReceiver extends BroadcastReceiver {
             return;
         }
 
+        if (intent.getAction().equals(Intent.ACTION_PACKAGE_ADDED)
+                || intent.getAction().equals(Intent.ACTION_PACKAGE_REPLACED)) {
 
-        if (intent.getAction().equals(Intent.ACTION_PACKAGE_ADDED) || intent.getAction().equals(Intent
-                .ACTION_PACKAGE_REPLACED)) {
             EventBus.getDefault().post(EventBusMessage.REFRESH_INFO);
+
             for (int i = 0; i < DownloadManagerService.downloadedInfoList.size(); i++) {
                 DownloadInfo downloadInfo = DownloadManagerService.downloadedInfoList.get(i);
                 if (packageName.equals(downloadInfo.packageName)) {
